@@ -64,19 +64,19 @@
                                             <li class="menu-item-has-children">
                                                 <a href="#">Bilgi Merkezi</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="about.html">Hakkımızda</a></li>
-                                                    <li><a href="blog.html">Duyurular</a></li>
-                                                    <li><a href="portfolio-gallery.html">Videolar</a></li>
-                                                    <li><a href="portfolio-slider.html">Etkinlikler</a></li>
+                                                    <li><a href="{{route('frontend.about')}}">Hakkımızda</a></li>
+                                                    <li><a href="{{route('frontend.announcements')}}">Duyurular</a></li>
+                                                    <li><a href="{{route('frontend.gallery')}}">Videolar</a></li>
+                                                    <li><a href="{{route('frontend.events')}}">Etkinlikler</a></li>
 
                                                 </ul>
                                             </li>
 
 
-                                            <li class="last-item"><a href="faq.html">S.S.S</a></li>
+                                            <li class="last-item"><a href="{{route('frontend.sss')}}">S.S.S</a></li>
                                             <li><a href="{{URL('/news')}}">Blog</a></li>
 
-                                            <li><a href="contact.html">İletişim</a></li>
+                                            <li><a href="{{route('frontend.contact')}}">İletişim</a></li>
 
 
                                         </ul>

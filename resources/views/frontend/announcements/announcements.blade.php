@@ -6,57 +6,81 @@
 
 
 
-<section class="uk-section uk-section-small ">
-    <div class="uk-container">
-
-        <div class="uk-flex uk-flex-middle uk-grid-small" uk-grid>
-            <div class="uk-panel uk-width-1-3@m"><h2>Duyurular</h2>
-                <div class="tm-title-border-top span-block uk-width-2-4@m">
-                    
-                </div>
-            </div>
-
-            <div class="uk-width-expand">
-
+<!-- Main content Start -->
+<div class="main-content">
+    <!-- Breadcrumbs Section Start -->
+    <div class="rs-breadcrumbs bg-8">
+        <div class="container">
+            <div class="content-part text-center pt-160 pb-160">
+                <h1 class="breadcrumbs-title white-color mb-0">Duyurular</h1>
             </div>
         </div>
     </div>
-</section>
+    <!-- Breadcrumbs Section End -->
 
-<section class="uk-section uk-section-small">
-    <div class="uk-container">
-        
-        
-        <div class="uk-child-width-1-3@m" uk-grid  >
-        @foreach ($announcements as $announcement)  
-                  <div>
-                <div class="uk-card uk-card-default" >
-                    <div class="uk-card-media-top" style="text-align:center;" >
-                        <a href="{{route('frontend.announcement',$announcement->slug)}}"> <img src="{{asset('uploads/announcements/')}}/{{$announcement->f_image}}" alt="{{$announcement->title}}" style="max-height:200px;"></a>
-                    </div>
-                    <div class="uk-card-body">
+    <!-- Blog Section  Start -->
+    <div class="rs-blog inner pt-100 pb-100 md-pt-80 md-pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
 
-                        <a href="{{route('frontend.announcement',$announcement->slug)}}"> <h3 class="uk-card-title">{{$announcement->title_tr}}</h3></a>  
-                        <p  style="    text-align: justify;" class="mt-10">{!! Str::words($announcement->text_tr,30,'...')!!}</p>
-                        <ul style="margin-left:10px;"> 
-                            <li class="font-16 text-white font-weight-600">{{ date('d',strtotime($announcement->date)) }} {{ date('M',strtotime($announcement->date)) }}</li>
-                            
+                    @foreach ($announcements as $announcement)
+                    <div class="blog-wrap shadow mb-70 xs-mb-50">
+                            <div class="image-part">
+                                <a href="{{route('frontend.announcements',$announcement->slug)}}"> <img src="{{asset('uploads/announcements/')}}/{{$announcement->f_image}}" alt="{{$announcement->title}}" style="max-height:200px;"></a>
 
-                          </ul>
-                          <a style="float:right;" href="{{route('frontend.announcement',$announcement->slug)}}" class="btn-read-more"> <button class="uk-button uk-button-default uk-button-small">{{ trans('frontend.read_more') }}</button></a>
-                     
-                    </div>
-                    
-                    
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title mb-10"><a href="{{route('frontend.announcements',$announcement->slug)}}">{{$announcement->title_tr}}</a></h3>
+                                <ul class="blog-meta mb-22">
+                                    <li><i class="fa fa-calendar-check-o"></i>{{ date('d',strtotime($announcement->date)) }} {{ date('M',strtotime($announcement->date)) }}</li>
+                                </ul>
+                                <p class="desc mb-20">{!! Str::words($announcement->text_tr,30,'...')!!}</p>
+                                <div class="btn-part">
+                                    <a class="readon-arrow" href="{{route('frontend.announcement',$announcement->slug)}}">Devamını Gör</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    @endforeach
+
+
+
+                    {{ $announcements->links() }}
+
                 </div>
-             
+
+
+
+                <div class="col-lg-4 md-mb-50 pl-35 lg-pl-15 md-order-first">
+                    <div id="sticky-sidebar" class="blog-sidebar">
+
+
+
+
+                        <div class="sidebar-categories sidebar-grid shadow">
+                            <div class="sidebar-title">
+                                <h3 class="title semi-bold mb-20">Diğer Bloglar</h3>
+                            </div>
+                            <ul>
+                                @foreach ($announcements as $announcement)
+
+                                    <li><a href="{{route('frontend.new',$announcement->slug)}}">{{$announcement->title_tr}}</a></li>
+
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            @endforeach
+            <div id="sticky-end"></div>
         </div>
-       
+    </div>
+    <!-- Blog Section  End -->
 </div>
-       
-</section>
 
 
 

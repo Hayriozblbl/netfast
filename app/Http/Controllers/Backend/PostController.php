@@ -23,8 +23,10 @@ class PostController extends BaseBackendController
      */
     public function index()
     {
-        $posts = post::all();
-        return view('backend.blog.post.index', compact('posts'));
+        $posts = post::orderBy("id", "desc")->paginate(6);
+        $post = post::all();
+
+        return view('backend.blog.post.index', compact('posts','post'));
     }
 
     /**
@@ -35,7 +37,9 @@ class PostController extends BaseBackendController
     public function create()
     {
         $unit_types = unit_type::all();
+
         return view('backend.blog.post.create', compact('unit_types'));
+
     }
 
     /**

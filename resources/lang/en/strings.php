@@ -1,25 +1,25 @@
 <?php
 
 return array (
-  'backend' => 
+  'backend' =>
   array (
-    'access' => 
+    'access' =>
     array (
-      'users' => 
+      'users' =>
       array (
-        'delete_user_confirm' => 'Are you sure you want to delete this user permanently? Anywhere in the application that references this user\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
+        'delete_user_confirm' => 'Silmek İstediğinize Emin Misiniz? user permanently? Anywhere in the application that references this user\'s id will most likely error. Proceed at your own risk. This can not be un-done.',
         'if_confirmed_off' => '(If confirmed is off)',
         'no_deactivated' => 'There are no deactivated users.',
         'no_deleted' => 'There are no deleted users.',
         'restore_user_confirm' => 'Restore this user to its original state?',
       ),
     ),
-    'dashboard' => 
+    'dashboard' =>
     array (
       'title' => 'Dashboard',
       'welcome' => 'Welcome',
     ),
-    'general' => 
+    'general' =>
     array (
       'all_rights_reserved' => 'All Rights Reserved.',
       'are_you_sure' => 'Are you sure you want to do this?',
@@ -29,25 +29,25 @@ return array (
       'minutes' => ' minutes',
       'search_placeholder' => 'Search...',
       'timeout' => 'You were automatically logged out for security reasons since you had no activity in ',
-      'see_all' => 
+      'see_all' =>
       array (
         'messages' => 'See all messages',
         'notifications' => 'View all',
         'tasks' => 'View all tasks',
       ),
-      'status' => 
+      'status' =>
       array (
         'online' => 'Online',
         'offline' => 'Offline',
       ),
-      'you_have' => 
+      'you_have' =>
       array (
         'messages' => '{0} You don\'t have messages|{1} You have 1 message|[2,Inf] You have :number messages',
         'notifications' => '{0} You don\'t have notifications|{1} You have 1 notification|[2,Inf] You have :number notifications',
         'tasks' => '{0} You don\'t have tasks|{1} You have 1 task|[2,Inf] You have :number tasks',
       ),
     ),
-    'search' => 
+    'search' =>
     array (
       'empty' => 'Please enter a search term.',
       'incomplete' => 'You must write your own search logic for this system.',
@@ -56,9 +56,9 @@ return array (
     ),
     'welcome' => 'Welcome to',
   ),
-  'emails' => 
+  'emails' =>
   array (
-    'auth' => 
+    'auth' =>
     array (
       'account_confirmed' => 'Your account has been confirmed.',
       'error' => 'Whoops!',
@@ -72,25 +72,25 @@ return array (
       'reset_password' => 'Click here to reset your password',
       'click_to_confirm' => 'Click here to confirm your account:',
     ),
-    'contact' => 
+    'contact' =>
     array (
       'email_body_title' => 'You have a new contact form request: Below are the details:',
       'subject' => 'A new :app_name contact form submission!',
     ),
   ),
-  'frontend' => 
+  'frontend' =>
   array (
     'test' => 'Test',
-    'tests' => 
+    'tests' =>
     array (
-      'based_on' => 
+      'based_on' =>
       array (
         'permission' => 'Permission Based - ',
         'role' => 'Role Based - ',
       ),
       'js_injected_from_controller' => 'Javascript Injected from a Controller',
       'using_blade_extensions' => 'Using Blade Extensions',
-      'using_access_helper' => 
+      'using_access_helper' =>
       array (
         'array_permissions' => 'Using Access Helper with Array of Permission Names or ID\'s where the user does have to possess all.',
         'array_permissions_not' => 'Using Access Helper with Array of Permission Names or ID\'s where the user does not have to possess all.',
@@ -105,11 +105,11 @@ return array (
       'you_can_see_because' => 'You can see this because you have the role of \':role\'!',
       'you_can_see_because_permission' => 'You can see this because you have the permission of \':permission\'!',
     ),
-    'general' => 
+    'general' =>
     array (
       'joined' => 'Joined',
     ),
-    'user' => 
+    'user' =>
     array (
       'change_email_notice' => 'If you change your e-mail you will be logged out until you confirm your new e-mail address.',
       'email_changed_notice' => 'You must confirm your new e-mail address before you can log in again.',

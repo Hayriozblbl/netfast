@@ -47,8 +47,11 @@
 
 
 
+                        {{ $posts->links() }}
 
                 </div>
+
+
 
                 <div class="col-lg-4 md-mb-50 pl-35 lg-pl-15 md-order-first">
                     <div id="sticky-sidebar" class="blog-sidebar">

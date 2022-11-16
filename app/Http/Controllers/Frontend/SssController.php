@@ -4,21 +4,20 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Frontend\BaseFrontendController;
 use App\Models\backend\about;
-use App\Models\frontend\post;
+ use App\Models\backend\sss;
 
 /**
  * Class AboutController.
  */
-class AboutController extends BaseFrontendController
+class SssController extends BaseFrontendController
 {
     /**
      * @return \Illuminate\View\View
      */
     public function index()
     {
-        $about = about::find(1);
-        $posts = post::orderBy("id", "desc")->paginate(6);
+        $sss = sss::all();
 
-        return view('frontend.about',compact('about','posts'));
+        return view('frontend.sss',compact('sss'));
     }
 }

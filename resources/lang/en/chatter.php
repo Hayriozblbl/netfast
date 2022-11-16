@@ -42,7 +42,7 @@ return array (
   'create' => 'Create Discussion',
   'posted_by' => 'Posted by',
   'head_details' => 'Posted in Category',
-  'confirm' => 'Are you sure you want to delete this response?',
+  'confirm' => 'Silmek İstediğinize Emin Misiniz? response?',
   'yes_confirm' => 'Yes Delete It',
   'no_confirm' => 'No Thanks',
   'submit' => 'Submit response',

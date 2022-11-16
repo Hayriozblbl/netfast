@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\File;
 class AnnouncementController extends BaseBackendController
 {
 
-      private $uploadPath = "uploads/announcement_images/";
-  /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -63,7 +62,7 @@ class AnnouncementController extends BaseBackendController
 
             $fileNameToStore =  time() . '.' . $extension;
             // upload
-            $path = $request->file('f_image')->move('public/uploads/announcements', $fileNameToStore);
+            $path = $request->file('f_image')->move('uploads/announcements', $fileNameToStore);
         } else {
             $fileNameToStore = 'f_image.jpg';
         }
@@ -122,7 +121,7 @@ class AnnouncementController extends BaseBackendController
         $announcement = announcement::where('id', $id)->first();
 
 
- 
+
         return view('backend.blog.announcement.edit',compact('announcement'));
 
 
@@ -177,9 +176,9 @@ class AnnouncementController extends BaseBackendController
         }
 
          $announcement->title_tr = $request->title_tr;
- 
+
          $announcement->text_tr = $request->text_tr;
- 
+
 
 
         $announcement->slug =  Str::slug($request->title_tr);
@@ -204,7 +203,7 @@ class AnnouncementController extends BaseBackendController
             }
         }
 
- 
+
 
 
       return redirect(route('admin.announcement.index'));
@@ -222,10 +221,10 @@ class AnnouncementController extends BaseBackendController
      $announcement = announcement::find($id);
       $announcement_images = announcement_images::where('announcement_id', $id)->get();
       foreach ($announcement_images as $image) {
-          unlink('public/uploads/announcements/' . $image->announcement_image_path);
+          unlink('uploads/announcements/' . $image->announcement_image_path);
 
       }
-      unlink('public/uploads/announcements/' . $announcement->f_image);
+      unlink('uploads/announcements/' . $announcement->f_image);
       $announcement->delete();
       return redirect()->back();
 

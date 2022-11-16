@@ -46,7 +46,7 @@
                                     {{ method_field('DELETE') }}
                                 </form>
                                 <a href=""
-                                    onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $contact->id }}').submit();}else{event.preventDefault();}"><span
+                                    onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $contact->id }}').submit();}else{event.preventDefault();}"><span
                                         class="feather icon-trash  font-medium-5">
                                     </span></a>
                             </td>

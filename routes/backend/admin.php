@@ -87,14 +87,18 @@ Route::post('about', 'AboutController@update')->name('about.update');
 //Event Controller
 Route::get('events/{id}', 'EventController@show')->where('id', '[0-9]+');
 Route::resource('events', 'EventController');
- 
+Route::post('events/image-upload', 'EventController@image_upload');
+Route::delete('events/image/{id}', 'EventController@deleteImage');
+
+
+
 //anlaşmalı firmalar
 Route::resource('company', 'CompanyController');
 Route::get('/company_delete/{id}', [CompanyController::class, 'delete'])->name('delete.company');
 // slider
 Route::resource('slider', 'SliderController');
 
-Route::resource('advertisement', 'AdvertisementController');
+Route::resource('sss', 'SssController');
 
 // testimonials
 Route::resource('testimonial', 'TestimonialController');

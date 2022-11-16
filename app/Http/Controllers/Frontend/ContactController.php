@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Frontend\BaseFrontendController;
 use App\Http\Requests\Frontend\Contact\SendContactRequest;
 use App\Mail\Frontend\Contact\SendContact;
+use App\Models\backend\sss;
+use App\Models\frontend\post;
 use Illuminate\Support\Facades\Mail;
 use App\Models\backend\contact_form;
 
@@ -18,7 +20,9 @@ class ContactController extends BaseFrontendController
      */
     public function index()
     {
-        return view('frontend.contact');
+
+        $posts = post::orderBy("id", "desc")->paginate(6);
+        return view('frontend.contact',compact('posts'));
     }
 
     /**

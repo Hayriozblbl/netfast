@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\MembersController;
 use App\Http\Controllers\Frontend\FrontPagesController;
+use App\Http\Controllers\Frontend\SssController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\User\DashboardController;
@@ -30,6 +31,7 @@ Route::get('contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('about', [AboutController::class, 'index'])->name('about');
 
+Route::get('sss', [SssController::class, 'sss'])->name('sss');
 
 
 Route::get('about/members', [MembersController::class, 'index'])->name('members');
@@ -135,7 +137,7 @@ Route::get('announcements/single/{announcement}', 'FrontPagesController@announce
 
 
 
-Route::get('advertisement', 'FrontPagesController@advertisement')->name('advertisement');
+Route::get('sss', 'FrontPagesController@sss')->name('sss');
 
 Route::get('productorder', 'FrontPagesController@productorder')->name('productorder');
 
@@ -164,7 +166,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         // User Dashboard Specific
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
- 
+
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');
         Route::get('dues', [DuesController::class, 'index'])->name('dues');
@@ -176,7 +178,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::get('financetwos', [FinancetwosController::class, 'index'])->name('financetwos');
         Route::get('showfinancetwos/{id}', [FinancetwosController::class, 'show'])->name('showfinancetwos');
         Route::get('financetotals', [FinancettotalsController::class, 'index'])->name('financetotals');
-        Route::get('showfinancetotals/{id}', [FinancettotalsController::class, 'show'])->name('showfinancetotals'); 
+        Route::get('showfinancetotals/{id}', [FinancettotalsController::class, 'show'])->name('showfinancetotals');
         Route::get('shopping', [ShoppingController::class, 'index'])->name('shopping');
         Route::get('showshopping', [ShoppingController::class, 'show'])->name('showshopping');
 

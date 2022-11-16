@@ -59,7 +59,7 @@
                                             <a href="{{   route('admin.founding_members.edit',$f_members->id) }}"> <i
                                                     class="feather icon-edit font-medium-5"></i> </a>
                                             <a href=""
-                                                onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $f_members->id }}').submit();}else{event.preventDefault();}">
+                                                onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $f_members->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
                                             <form id="delete-form-{{ $f_members->id }}" method="post"
                                                 action="{{ route('admin.founding_members.destroy',$f_members->id) }}">
@@ -73,7 +73,7 @@
 
 
                                 </tbody>
-                              
+
                             </table>
                         </div>
                     </div>

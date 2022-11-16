@@ -16,33 +16,12 @@
             <div id="nivoSlider" class="slides">
                 @foreach ($sliders as $slider)
 
-                <img src="{{asset('uploads/sliders/')}}/{{$slider->image}}" alt="" style="display: inline;width: 1665px;height: 720px;" title="#slide-{{ $loop->index + 1 }}" />
+                <img src="{{asset('uploads/sliders/')}}/{{$slider->image}}" alt=""   title="#slide-{{ $loop->index + 1 }}" />
                 @endforeach
-            </div>
-            <!-- Slide 1 -->
-            @foreach ($sliders as $slider)
-
-            <div id="slide-{{ $loop->index + 1 }}" class="slider-direction">
-                <div class="container">
-                    <div class="content-part">
-                        <div class="slider-des">
-                            <h1 class="sl-title white-color">{{$slider->title}}</h1>
-                            <div class="sl-desc">
-                                {!!$slider->text!!}
-                            </div>
-                        </div>
-                        <div class="slider-bottom">
-                            <ul>
-                                <li><a href="{{$slider->url}}" class="readon banner-style">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
-        @endforeach
-    </div>
+     </div>
     <!-- Slider End -->
 
 
@@ -178,40 +157,40 @@
                 <div class="row">
                     <div class="col-lg-8 form-part">
                         <div class="sec-title mb-35 md-mb-30">
-                            <div class="sub-title primary">CONTACT US</div>
-                            <h2 class="title mb-0">Get In Touch</h2>
+                            <div class="sub-title primary">Bizimle İletişime Geçin</div>
+                            <h2 class="title mb-0">Temasa Geçin</h2>
                         </div>
                         <div id="form-messages"></div>
                         <form id="contact-form" class="contact-form" method="post" action="https://rstheme.com/products/html/reobiz/mailer.php">
                             <div class="row">
                                 <div class="col-md-6 mb-30">
                                     <div class="common-control">
-                                        <input type="text" name="name" placeholder="Name" required="">
+                                        <input type="text" name="name" placeholder="Ad - Soyad" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-30">
                                     <div class="common-control">
-                                        <input type="email" name="email" placeholder="Email" required="">
+                                        <input type="email" name="email" placeholder="E-posta" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-30">
                                     <div class="common-control">
-                                        <input type="text" name="phone" placeholder="Phone Number" required="">
+                                        <input type="text" name="phone" placeholder="Telefon Numarası" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-30">
                                     <div class="common-control">
-                                        <input type="text" name="website" placeholder="Your Website" required="">
+                                        <input type="text" name="website" placeholder="Firma Adı" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-30">
                                     <div class="common-control">
-                                        <textarea name="message" placeholder="Your Message Here" required=""></textarea>
+                                        <textarea name="message" placeholder="Mesajınızı Yazınız" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="submit-btn">
-                                        <button type="submit" class="readon">Submit Now</button>
+                                        <button type="submit" class="readon">Gönder</button>
                                     </div>
                                 </div>
                             </div>
@@ -219,14 +198,13 @@
                     </div>
                     <div class="col-lg-4 pl-0 md-pl-pr-15 md-order-first">
                         <div class="contact-info">
-                            <h3 class="title">Contact Info</h3>
+                            <h3 class="title">Bize Ulaşın</h3>
                             <div class="info-wrap mb-20">
                                 <div class="icon-part">
                                     <i class="flaticon-location"></i>
                                 </div>
                                 <div class="content-part">
-                                    <h4>USA Office</h4>
-                                    127 Double Street, Dublin, United Kingdom.
+                                     {{ GeneralSiteSettings('site_address')}}
                                 </div>
                             </div>
                             <div class="info-wrap mb-20">
@@ -234,29 +212,27 @@
                                     <i class="flaticon-call"></i>
                                 </div>
                                 <div class="content-part">
-                                    <h4>Telephone</h4>
-                                    <p>P: <a href="tel:+1235558888">(+123) 555 8888</a></p>
-                                    <p>P: <a href="tel:+1235558899">(+123) 555 8899</a></p>
-                                </div>
+                                    <h4>Telefon</h4>
+                                    <p>P: <a href="tel:{{ GeneralSiteSettings('site_mobile')}}">{{ GeneralSiteSettings('site_mobile')}}</a></p>
+                                 </div>
                             </div>
                             <div class="info-wrap mb-20">
                                 <div class="icon-part">
                                     <i class="flaticon-email"></i>
                                 </div>
                                 <div class="content-part">
-                                    <h4>Mail Us</h4>
-                                    <p>E: <a href="mailto:support@rstheme.com">support@rstheme.com</a></p>
-                                    <p>E: <a href="mailto:info@codesless.com">info@codesless.com</a></p>
-                                </div>
+                                    <h4>E-posta</h4>
+                                    <p>E: <a href="mailto:{{ GeneralSiteSettings('site_email')}}">{{ GeneralSiteSettings('site_email')}}</a></p>
+                                 </div>
                             </div>
                             <div class="info-wrap">
                                 <div class="icon-part">
                                     <i class="flaticon-clock"></i>
                                 </div>
                                 <div class="content-part">
-                                    <h4>Opening Hours</h4>
-                                    <p>Mon-Fri: 10:00-18:00</p>
-                                    <p>Sat-Sun: 10:00-14:00</p>
+                                    <h4>Çalışma Saatlerimiz</h4>
+                                    <p>Pzt-Cuma:09:00-18:00</p>
+                                    <p>Ctesi-Pazar: Kapalı</p>
                                 </div>
                             </div>
                         </div>

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\frontend\advert_images;
+use App\Models\frontend\announcement_images;
+use App\Models\frontend\event_images;
+use Illuminate\Support\Facades\File;
 use Validator;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-
+use Session;
 use App\Models\backend\Event;
 use App\Http\Controllers\Backend\BaseBackendController;
 
@@ -13,7 +17,7 @@ class EventController extends BaseBackendController
 {
 
 
-    private $uploadPath = "public/uploads/events/";
+    private $uploadPath = "uploads/events/";
 
     /**
      * Display a listing of the resource.
@@ -52,23 +56,11 @@ class EventController extends BaseBackendController
             'location_tr' => 'required'
         ]);
 
-        // Start of Upload Files
-        $formFileName = "image";
-        $fileFinalName = "";
-        if ($request->$formFileName != "") {
-            $fileFinalName = time() . rand(
-                1111,
-                9999
-            ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
-            $path = $this->getUploadPath();
-            $request->file($formFileName)->move($path, $fileFinalName);
-        }
 
 
 
         $event = new Event();
-        $event->image =  $fileFinalName;
-        $event->start_date = $request->start_date;
+         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
         $event->name_tr = $request->name_tr;
         $event->text_tr = $request->text_tr;
@@ -76,16 +68,51 @@ class EventController extends BaseBackendController
 
         $event->slug =  Str::slug($request->name_tr);
 
-
-
-
         $event->save();
 
+
+        // Start of Upload Files
+$image_array=Session::get("gallery_images")??[];
+foreach($image_array as $image) {
+    $gallery_images = new event_images;
+    $gallery_images->gallery_id = $event->id;
+    $gallery_images->gallery_image_path = $image;
+    $gallery_images->save();
+}
+Session::forget("gallery_images");
 
             return redirect('admin/events')->with('success', trans('Information has been added sucessfully'));
 
     }
 
+
+public function image_upload(Request $request){
+   $image_array= Session::get("gallery_images")??[];
+    // Start of Upload Files
+    if ($request->hasFile('gallery_images')) {
+         $all_images = $request->file('gallery_images');
+        $path = $this->getUploadPath();
+        foreach ($all_images as $file) {
+            $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
+            $file->move($path, $image_name);
+            array_push($image_array,$image_name);
+            Session::put("gallery_images",$image_array);
+        }
+    }
+    return json_encode(["success"=>"true","msg"=>"Uploaded"]);
+
+}
+    public function deleteImage($id)
+    {
+        //For Deleting
+        $images = new event_images();
+        $images = event_images::find($id);
+        File::delete($this->getUploadPath() . $images->event_image_path);
+        $images->delete($id);
+        return response()->json([
+            'success' => 'Data has been deleted successfully!'
+        ]);
+    }
 
     public function getUploadPath()
     {
@@ -145,39 +172,27 @@ class EventController extends BaseBackendController
         $event = Event::find($id);
         $event->start_date = $request->start_date;
         $event->end_date = $request->end_date;
-    
+
         $event->name_tr = $request->name_tr;
         $event->text_tr = $request->text_tr;
         $event->location_tr = $request->location_tr;
 
         $event->slug =  Str::slug($request->name_en);
 
+        $event->save();
 
 
         // Start of Upload Files
-        $formFileName = "image";
-        $fileFinalName = "";
-        if ($request->$formFileName != "") {
-            // Delete a style_logo_en photo
-            if ($event->image != "") {
-                unlink('public/uploads/events/' . $event->image);
-            }
-
-            $fileFinalName = time() . rand(1111, 9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
-            $path = $this->getUploadPath();
-            $request->file($formFileName)->move($path, $fileFinalName);
-            $eventx = Event::find($id);  // here to store image alone
-            $eventx->image = $fileFinalName; // here there is  a bug when update profile image
-            $eventx->save();
+        $image_array=Session::get("gallery_images")??[];
+        foreach($image_array as $image) {
+            $gallery_images = new event_images;
+            $gallery_images->gallery_id = $event->id;
+            $gallery_images->gallery_image_path = $image;
+            $gallery_images->save();
         }
+        Session::forget("gallery_images");
 
 
-
-
-
-
-
-        $event->save();
 
             return redirect('admin/events')->with('success', trans('Information has been updated sucessfully'));
 
@@ -194,7 +209,7 @@ class EventController extends BaseBackendController
         $event = Event::find($id);
         // Delete a style_logo_en photo
         if ($event->image != "") {
-            unlink('public/uploads/events/' . $event->image);
+            unlink('uploads/events/' . $event->image);
         }
         $event->delete();
         return redirect('admin/events')->with('success', trans('Information has been deleted sucessfully'));

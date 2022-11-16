@@ -3,62 +3,45 @@
 @section('content')
 
 
-<section id="tm-home-news" class="uk-section tm-filter-after">
-    <div class="uk-container">
 
-        <div class="uk-grid-large" uk-grid uk-height-match="target: > div > .uk-panel;">
-        <h1 class="uk-heading-bullet">Medya Galerisi</h1>
-            <div class="uk-width-1-1@m">
-            @foreach ($galleries as $gallery)
-            <div class="uk-h3">{{ $gallery->title}}</div>
-
-                <div class="tm-title-border-top span-block uk-panel uk-flex uk-flex-middle">
-                <div id="grid" class="gallery-isotope grid-3 gutter clearfix">
-                    <!-- Portfolio Item Start -->
-                    
-
-                    <!-- Portfolio Item Start -->
-               
-                    <div class="uk-child-width-1-4@m" uk-grid uk-lightbox="animation: scale">
-                        @foreach ($gallery->gallery_images->take(4) as $image)
-                        <div>
-                            <a class="uk-inline" href="{{asset('uploads/galleries/')}}/{{ $image->gallery_image_path}}"
-                                data-caption="Caption 3">
-                                <img src="{{asset('uploads/galleries/')}}/{{ $image->gallery_image_path}}"
-                                    alt="{{ $gallery->title}}">
-                            </a>
-                        </div>
-                        @endforeach
-                        </ul>
-                    </div>
+    <!-- Main content Start -->
+    <div class="main-content">
+        <!-- Breadcrumbs Section Start -->
+        <div class="rs-breadcrumbs bg-6">
+            <div class="container">
+                <div class="content-part text-center pt-160 pb-160">
+                    <h1 class="breadcrumbs-title white-color mb-0">Videolar</h1>
                 </div>
-
-               
             </div>
-            <!-- Portfolio Item End -->
-
-
-
-
-
-            <nav>
-                <ul class="pagination theme-colored">
-                    {{ $galleries->links() }}
-                </ul>
-            </nav>
-
-
-          
-
         </div>
-        <!-- End Portfolio Gallery Grid -->
+        <!-- Breadcrumbs Section End -->
 
+        <!-- Portfolio Section Start -->
+        <div id="rs-portfolio" class="rs-portfolio single pt-100 pb-100 md-pt-80 md-pb-80">
+            <div class="container">
+
+                @foreach ($galleries as $gallery)
+ <h2> {{$gallery->title}}</h2>
+                    <div class="slider-area mb-50">
+                        <div class="rs-carousel owl-carousel nav-style1 nav-mod" data-loop="true" data-items="1" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="true" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="1" data-lg-device="1" data-md-device-nav="true" data-md-device-dots="false">
+                            <div>
+
+                                <iframe width="100%" height="450" src="{{ $gallery->video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                        </div>
+                    </div>
+
+                @endforeach
+
+            </div>
+        </div>
+        <!-- Portfolio Section End -->
     </div>
-    @endforeach
-    </div>
-    </div>
-    </div>
-</section>
+    <!-- Main content End -->
 
 
 @endsection
+
+
+

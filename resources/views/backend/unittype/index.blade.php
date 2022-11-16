@@ -47,7 +47,7 @@
                                         <td>
                                             <a href="{{   route('admin.unittype.edit',$unittype->id) }}"> <i class="feather icon-edit font-medium-5"></i> </a>
                                             <a href=""
-                                                onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $unittype->id }}').submit();}else{event.preventDefault();}">
+                                                onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $unittype->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
                                             <form id="delete-form-{{ $unittype->id }}" method="post"
                                                 action="{{ route('admin.unittype.destroy',$unittype->id) }}">

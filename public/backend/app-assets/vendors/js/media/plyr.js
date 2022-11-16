@@ -6482,7 +6482,7 @@ typeof navigator === "object" && (function (global, factory) {
         // Double check we're enabled
         if (!this.enabled) {
           destroy(this);
-        } // Start ticking our safety timer. If the whole advertisement
+        } // Start ticking our safety timer. If the whole sss
         // thing doesn't resolve within our set time; we bail
 
 
@@ -6635,7 +6635,7 @@ typeof navigator === "object" && (function (global, factory) {
       value: function addCuePoints() {
         var _this7 = this;
 
-        // Add advertisement cue's within the time line if available
+        // Add sss cue's within the time line if available
         if (!is$1.empty(this.cuePoints)) {
           this.cuePoints.forEach(function (cuePoint) {
             if (cuePoint !== 0 && cuePoint !== -1 && cuePoint < _this7.player.duration) {
@@ -6770,7 +6770,7 @@ typeof navigator === "object" && (function (global, factory) {
       /**
        * Setup hooks for Plyr and window events. This ensures
        * the mid- and post-roll launch at the correct time. And
-       * resize the advertisement when the player resizes
+       * resize the sss when the player resizes
        */
 
     }, {
@@ -6825,7 +6825,7 @@ typeof navigator === "object" && (function (global, factory) {
 
         if (!this.managerPromise) {
           this.resumeContent();
-        } // Play the requested advertisement whenever the adsManager is ready
+        } // Play the requested sss whenever the adsManager is ready
 
 
         this.managerPromise.then(function () {
@@ -6860,7 +6860,7 @@ typeof navigator === "object" && (function (global, factory) {
     }, {
       key: "resumeContent",
       value: function resumeContent() {
-        // Hide the advertisement container
+        // Hide the sss container
         this.elements.container.style.zIndex = ''; // Ad is stopped
 
         this.playing = false; // Play video
@@ -6874,7 +6874,7 @@ typeof navigator === "object" && (function (global, factory) {
     }, {
       key: "pauseContent",
       value: function pauseContent() {
-        // Show the advertisement container
+        // Show the sss container
         this.elements.container.style.zIndex = 3; // Ad is playing
 
         this.playing = true; // Pause our video.
@@ -6970,8 +6970,8 @@ typeof navigator === "object" && (function (global, factory) {
       }
       /**
        * Setup a safety timer for when the ad network doesn't respond for whatever reason.
-       * The advertisement has 12 seconds to get its things together. We stop this timer when the
-       * advertisement is playing, or when a user action is required to start, then we clear the
+       * The sss has 12 seconds to get its things together. We stop this timer when the
+       * sss is playing, or when a user action is required to start, then we clear the
        * timer on ad ready
        * @param {Number} time
        * @param {String} from
@@ -8136,7 +8136,7 @@ typeof navigator === "object" && (function (global, factory) {
       key: "play",
 
       /**
-       * Play the media, or play the advertisement (if they are not blocked)
+       * Play the media, or play the sss (if they are not blocked)
        */
       value: function play() {
         var _this2 = this;

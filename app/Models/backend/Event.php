@@ -29,4 +29,10 @@ class Event extends Model
     }
 
 
+
+    public function gallery_images()
+    {
+        return $this->hasMany('App\Models\frontend\event_images','gallery_id','id');
+    }
+
 }

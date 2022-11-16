@@ -33,7 +33,7 @@
 
                                         <td>
                                             <a href="{{   route('admin.shopping.edit',$shop->id) }}"> <i class="feather icon-edit font-medium-5"></i> </a>
-                                            <a href="" onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $shop->id }}').submit();}else{event.preventDefault();}">
+                                            <a href="" onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $shop->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
                                             <form id="delete-form-{{ $shop->id }}" method="post" action="{{ route('admin.shopping.destroy',$shop->id) }}">
                                                 {{ csrf_field() }}

@@ -3,57 +3,79 @@
 @section('title', GeneralSiteSettings('site_title') . ' | ' . __('frontend.events'))
 
 @section('content')
-<!-- Start main-content -->
-<div class="main-content">
 
-<div class="uk-section">
-        <div class="uk-container">
-            <div uk-grid>
-                <div class="uk-width-expand">@foreach($events as $event)
-                                            <article class="uk-card uk-card-default uk-card-body uk-card-small uk-margin-medium-top uk-box-shadow-hover-xlarge">
-                            <div class="uk-flex uk-flex-middle" uk-grid>
-                                                                <div class="uk-width-1-5@m">
-                                    <a href="{{ route('frontend.event',$event->slug) }}">
-                                        <img src="{{  asset('uploads/events/')}}/{{ $event->image }}" alt=" {{ $event->name_tr }}" uk-img>
-                                    </a>
-                                </div>
-                                                                <div class="uk-width-expand">
-                                    <p class="uk-margin-remove uk-text-danger uk-text-small uk-text-bold">{{ date('M',strtotime($event->start_date)) }} {{ date('d',strtotime($event->start_date)) }}  {{ date('Y',strtotime($event->start_date)) }}</p>
-                                    <h4 class="uk-margin-small">
-                                        <a  class="uk-link-text uk-text-bold" href="{{ route('frontend.event',$event->slug) }}" title=" {{ $event->name_tr }}">
-                                            {{ $event->name_tr }}
+
+
+    <!-- Main content Start -->
+    <div class="main-content">
+        <!-- Breadcrumbs Section Start -->
+        <div class="rs-breadcrumbs bg-6">
+            <div class="container">
+                <div class="content-part text-center pt-160 pb-160">
+                    <h1 class="breadcrumbs-title white-color mb-0">Etkinlikler</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumbs Section End -->
+
+        <!-- Portfolio Section Start -->
+        <div id="rs-portfolio" class="rs-portfolio single pt-100 pb-100 md-pt-80 md-pb-80">
+            <div class="container">
+                <div class="slider-area mb-50">
+                    <div class="rs-carousel owl-carousel nav-style1 nav-mod" data-loop="true" data-items="1" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="true" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="1" data-lg-device="1" data-md-device-nav="true" data-md-device-dots="false">
+                        <div class="slide-item">
+                            <a href="#"><img class="bdru-5" src="assets/images/portfolio/single/slider/1.jpg" alt=""></a>
+                        </div>
+                        <div class="slide-item">
+                            <a href="#"><img class="bdru-5" src="assets/images/portfolio/single/slider/2.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach($events as $event)
+
+                        <div class="col-lg-8 pr-55 md-pr-15">
+
+
+                            <div class="slider-area mb-50">
+                                <div class="rs-carousel owl-carousel nav-style1 nav-mod" data-loop="true" data-items="1" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="true" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="1" data-lg-device="1" data-md-device-nav="true" data-md-device-dots="false">
+                                    @foreach ($event->gallery_images as $image)
+
+                                    <div class="slide-item">
+                                        <a href="#">  <img src="{{asset('uploads/events/')}}/{{ $image->gallery_image_path}}" alt=" {{ $event->name_tr }}">
                                         </a>
-                                    </h4>
-                                    <div class="uk-flex uk-flex-middle uk-flex-between">
-                                        <div>
-                                            <p class="uk-margin-remove">{{ trans('frontend.location')." : ".$event->location }}</p>
-                                            <div class="uk-margin">{!! $event->text_tr !!}</div>
-                                        </div>
-                                        <div class="uk-text-small uk-margin-medium-left uk-flex-none">
-                                            <a href="{{ route('frontend.event',$event->slug) }}"> Detaylı Bilgi<span uk-icon="icon: arrow-right;"></span></a>
+                                    </div>
+                                    @endforeach
+
+                                </div>
+                            </div>
+
+                             <p class="desc mb-29">{!! $event->text_tr !!}</p>
+
+                        </div>
+
+                                <div class="col-lg-4 md-order-first md-mb-40">
+                                    <div class="project-sidebar">
+                                         <div class="sb-project-detail mt-50 md-mt-0">
+                                            <h4 class="title">Detaylar</h4>
+                                            <ul>
+                                                <li><span>Lokasyon:</span> {{  $event->name_tr }}</li>
+
+                                                <li><span>Lokasyon:</span> {{ trans('frontend.location')." : ".$event->location }}</li>
+                                                <li><span>Tarih:</span> {{ date('M',strtotime($event->start_date)) }} {{ date('d',strtotime($event->start_date)) }}  {{ date('Y',strtotime($event->start_date)) }}</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>    
-                        @endforeach        
-                    <ul class="uk-pagination uk-flex-center uk-margin-large" uk-margin>
-    <li class="uk-disabled">
-        {{ $events->links() }}
-    </li>
-</ul>
-
+                            @endforeach
                 </div>
             </div>
-
         </div>
+        <!-- Portfolio Section End -->
     </div>
-
-  
-	</div>
-</section>
-
+    <!-- Main content End -->
 
 
 
 @endsection
+

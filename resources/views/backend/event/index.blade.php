@@ -25,12 +25,11 @@
                                         <th>S. NO</th>
 
 
-                                        <th>{{ trans('backend.image') }}</th>
-
+                                        <th>Etkinlik Adı</th>
+                                        <th>{{ trans('backend.location') }}</th>
                                         <th>{{ trans('backend.start_date') }}</th>
                                         <th>{{ trans('backend.end_date') }}</th>
-                                        <th>{{ trans('backend.name') }}</th>
-                                        <th>{{ trans('backend.location') }}</th>
+
 
 
                                         <th>{{ trans('backend.action') }}</th>
@@ -42,19 +41,17 @@
                                     <td>{{ $loop->index + 1 }}</td>
 
 
-                                        <td align="left"> <img style="height: 50px;width: 50px;" class="img-circle"
-                                                src="{{ asset('uploads/events/')}}/{{ $event->image }}">
-                                        </td>
+                                    <td class='name'>{{ $event->name }}</td>
+                                    <td class='location'>{{ $event->location }}</td>
 
-                                        <td class='start_date'>{{ date('d/M/Y - H:i' ,strtotime($event->start_date)) }}
+                                    <td class='start_date'>{{ date('d/M/Y - H:i' ,strtotime($event->start_date)) }}
                                         </td>
                                         <td class='end_date'>{{ date('d/M/Y - H:i',strtotime($event->end_date)) }}</td>
-                                        <td class='name'>{{ $event->name }}</td>
-                                        <td class='location'>{{ $event->location }}</td>
+
                                      <td>
                                         <a href="{{route('admin.events.edit',$event->id) }}"> <i class="feather icon-edit font-medium-5"></i> </a>
                                         <a href=""
-                                            onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $event->id }}').submit();}else{event.preventDefault();}">
+                                            onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $event->id }}').submit();}else{event.preventDefault();}">
                                             <i class="feather icon-trash  font-medium-5"> </i></a>
                                         <form id="delete-form-{{ $event->id }}" method="post" action="{{ route('admin.events.destroy',$event->id) }}">
                                             {{ csrf_field() }}
@@ -71,14 +68,13 @@
                                     <tr>
                                         <th>S. NO</th>
 
-
-                                        <th>{{ trans('backend.image') }}</th>
+                                        <th>{{ trans('backend.name') }}</th>
+                                        <th>{{ trans('backend.location') }}</th>
 
 
                                         <th>{{ trans('backend.start_date') }}</th>
                                         <th>{{ trans('backend.end_date') }}</th>
-                                        <th>{{ trans('backend.name') }}</th>
-                                        <th>{{ trans('backend.location') }}</th>
+
 
 
                                         <th>{{ trans('backend.action') }}</th>

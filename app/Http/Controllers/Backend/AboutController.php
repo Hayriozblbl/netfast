@@ -52,7 +52,7 @@ class AboutController extends BaseBackendController
         $id = $this->getId();
         $about = about::find($id);
         if (!empty($about)) {
-        
+
             $about->about_title_tr = $request->about_title_tr;
 
             $about->about_text_tr = $request->about_text_tr;
@@ -65,7 +65,7 @@ class AboutController extends BaseBackendController
             if ($request->$formFileName != "") {
                 // Delete a style_logo_en photo
                 if ($about->about_image != "") {
-                    unlink('public/uploads/about/' . $about->about_image);
+                    unlink('uploads/about/' . $about->about_image);
                 }
                 $fileFinalName = time() . rand(
                     1111,
@@ -84,7 +84,7 @@ class AboutController extends BaseBackendController
 
 
 
-      
+
             $about->mission_title_tr = $request->mission_title_tr;
 
 
@@ -123,7 +123,7 @@ class AboutController extends BaseBackendController
             if ($request->$formFileNameEn != "") {
                 // Delete a style_logo_en photo
                 if ($about->page_image != "") {
-                    unlink('public/uploads/about/' . $about->page_image);
+                    unlink('uploads/about/' . $about->page_image);
                 }
                 $fileFinalNameEn = time() . rand(
                     1111,

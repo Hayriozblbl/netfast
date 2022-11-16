@@ -46,7 +46,7 @@
                                        <td>
                                             <a href="{{   route('admin.activitytype.edit',$activitytype->id) }}"> <i class="feather icon-edit font-medium-5"></i> </a>
                                             <a href=""
-                                                onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $activitytype->id }}').submit();}else{event.preventDefault();}">
+                                                onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $activitytype->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
                                             <form id="delete-form-{{ $activitytype->id }}" method="post" action="{{ route('admin.activitytype.destroy',$activitytype->id) }}">
                                                 {{ csrf_field() }}

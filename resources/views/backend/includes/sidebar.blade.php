@@ -181,7 +181,7 @@
             </li>
 
             <li class=" nav-item ">
-                <a href="{{ route('admin.advertisement.index') }}"><i class="feather icon-airplay"></i><span class="menu-title" data-i18n="User">Reklamlar</span>
+                <a href="{{ route('admin.sss.index') }}"><i class="feather icon-airplay"></i><span class="menu-title" data-i18n="User">Sıkça sorulan Sorular</span>
                 </a>
             </li>
 

@@ -13,13 +13,6 @@ class announcement extends Model
        'title_tr', 'text_tr',
     ];
 
-    /**
-     * This array will have the attributes which you want it to support multi languages
-     */
-    protected $multi_lang = [
-        'title',
-        'text',
-    ];
 
     public function announcement_images()
     {

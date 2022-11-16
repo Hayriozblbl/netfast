@@ -16,15 +16,44 @@
 		{{ csrf_field() }}
 
 
+          <div class="col-8">
+
+              <div class="card">
+                  <div class="header">
+                      <h2>{{ trans('backend.images') }}</h2>
+                  </div>
+                  <div class="body">
+                      <div class="file-loading">
+                          <input id="file-1" type="file" name="gallery_images[]" multiple
+                                 class="file" data-overwrite-initial="false" data-min-file-count="0">
+                      </div>
+                  </div>
+              </div>
+
+              <script type="text/javascript">
+                  $("#file-1").fileinput({
+                      rtl: true,
+                      showUpload: false,
+                      theme: 'fa',
+                      uploadUrl: "/admin/events/image-upload",
+                      method:'Post',
+                      uploadExtraData: function() {
+                          return {
+                              _token: $("input[name='_token']").val(),
+                          };
+                      },
+                      allowedFileExtensions: ['jpg', 'png', 'jpeg'],
+                      overwriteInitial: false,
+                      maxFilesNum: 20,
+                      slugCallback: function(filename) {
+                          return filename.replace('(', '_').replace(']', '_');
+                      }
+                  });
+              </script>
+          </div>
 <div class="container" >
             <div class="row" >
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class="control-label">Etkinlik Resmi</label>
-                        <input type="file" class="form-control dropify" name="image" data-max-file-size="8M"
-                            data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG" data-default-file="">
-                    </div>
-                </div>
+
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label class="control-label">{{ trans('Start Date') }}</label>
@@ -41,14 +70,14 @@
         </div>
 
 
-     
+
 
 
 
 
         <div class="tab-content pt-1">
             <div class="tab-pane active" id="home-unit" role="tabpanel" aria-labelledby="home-tab-justified">
-           
+
                 <h4 class="card-title">
                     {{ trans('backend.name') }}</h4>
 
@@ -64,7 +93,7 @@
                 <textarea type="text" class="ckeditor" required="required" aria-required="true"  name="text_tr"> </textarea>
                 <script type="text/javascript">
       CKEDITOR.replace( 'text_tr' );
-      CKEDITOR.add            
+      CKEDITOR.add
    </script>
             </div>
         </div>

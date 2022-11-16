@@ -4,12 +4,12 @@
          <div class="footer-newsletter">
              <div class="row y-middle">
                  <div class="col-md-6 sm-mb-26">
-                     <h3 class="title white-color mb-0">Newsletter Subscribe</h3>
+                     <h3 class="title white-color mb-0">Bültenimize Abone Olun</h3>
                  </div>
                  <div class="col-md-6 text-right">
                      <form class="newsletter-form">
-                         <input type="email" name="email" placeholder="Your email address" required="">
-                         <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                         <input type="email" name="email" placeholder="E-Posta Adresinizi Yazın." required="">
+                         <button type="submit"><i class="fa fa-paper-plane"></i> Abone Ol</button>
                      </form>
                  </div>
              </div>
@@ -22,14 +22,21 @@
                              <a href="{{route('frontend.index')}}"><img src="{{asset('uploads/settings/')}}/{{GeneralSiteSettings('site_logo') }}" alt="{{ GeneralSiteSettings('site_title') }}"></a>
 
                          </div>
-                         <p class="desc">We denounce with righteous indignation in and dislike men who are so beguiled and to demo realized by the charms of pleasure moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound.</p>
+                         <p class="desc" style="color: white;">2019 yılı başında NETCOM A.Ş çatısı altında kurulmuş olup merkezi Ankara’dır.
+                             <br>
+
+                             “ Hızlı, Güvenilir, Katma Değerli ” sloganı ile çıktığımız bu yolda amacımız katma değerli dağıtıma yeni bir soluk getirmektir.
+                             <br>
+                             Netfast ; Draytek , Synology ve Engenius markalarının Türkiye Distribütörlüğünü yapmaktadır.
+                             <br>
+                             Netfast , Türkiye’de değişimin öncüleri arasında yer alan NETCOM A.Ş.'nin sahip olduğu geniş bilgi, tecrübe ve iş ortakları ağını en iyi şekilde değerlendirmektedir.</p>
                          <div class="btn-part">
-                             <a class="readon" href="about.html">Discover More</a>
+                             <a class="readon" href="{{('fontend.about')}}">Hakkımızda</a>
                          </div>
                      </div>
                  </div>
                  <div class="col-lg-4 col-md-12 col-sm-12 md-mb-32 footer-widget">
-                     <h4 class="widget-title">Contact Info</h4>
+                     <h4 class="widget-title">İletişim Bilgilerimiz</h4>
                      <ul class="address-widget pr-40">
                          <li>
                              <i class="flaticon-location"></i>
@@ -44,53 +51,30 @@
                          <li>
                              <i class="flaticon-email"></i>
                              <div class="desc">
-                                 <a href="mailto:support@rstheme.com">support@rstheme.com</a>
+                                 <a href="{{ GeneralSiteSettings('site_email')}}">{{ GeneralSiteSettings('site_email')}}</a>
                              </div>
                          </li>
-                         <li>
-                             <i class="flaticon-clock"></i>
-                             <div class="desc">
-                                 10:00 - 17:00
-                             </div>
-                         </li>
+
                      </ul>
                  </div>
                  <div class="col-lg-4 col-md-12 col-sm-12 footer-widget">
-                     <h4 class="widget-title">Latest Posts</h4>
+                     <h4 class="widget-title">Bloglar</h4>
                      <div class="footer-post">
+                         @foreach($posts->take(4) as $post )
                          <div class="post-wrap mb-15">
                              <div class="post-img">
-                                 <a href="blog-single.html"><img src="assets/images/blog/small/1.jpg" alt=""></a>
-                             </div>
+                                 <a href="{{route('frontend.new',$post->slug)}}">
+                                     <img src="{{asset('uploads/posts/')}}/{{$post->f_image}}" alt="{{$post->title}}"></a>                             </div>
                              <div class="post-desc">
-                                 <a href="blog-single.html">Covid-19 threatens the next generation of smartphones</a>
+                                 <a href="{{route('frontend.new',$post->slug)}}">{{$post->title}}</a>
                                  <div class="date-post">
-                                     <i class="fa fa-calendar"></i> September 6, 2019
+                                     <i class="fa fa-calendar"></i>{{ date('d',strtotime($post->date)) }} {{ date('M',strtotime($post->date)) }}
                                  </div>
                              </div>
                          </div>
-                         <div class="post-wrap mb-15">
-                             <div class="post-img">
-                                 <a href="blog-single.html"><img src="assets/images/blog/small/2.jpg" alt=""></a>
-                             </div>
-                             <div class="post-desc">
-                                 <a href="blog-single.html">Soundtrack filma Lady Exclusive Music</a>
-                                 <div class="date-post">
-                                     <i class="fa fa-calendar"></i> April 15, 2019
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="post-wrap">
-                             <div class="post-img">
-                                 <a href="blog-single.html"><img src="assets/images/blog/small/3.jpg" alt=""></a>
-                             </div>
-                             <div class="post-desc">
-                                 <a href="blog-single.html">Winged moved stars, fruit creature seed night.</a>
-                                 <div class="date-post">
-                                     <i class="fa fa-calendar"></i> October 9, 2019
-                                 </div>
-                             </div>
-                         </div>
+                         @endforeach
+
+
                      </div>
                  </div>
              </div>
@@ -99,7 +83,9 @@
              <div class="row y-middle">
                  <div class="col-lg-6 col-md-8 sm-mb-21">
                      <div class="copyright">
-                         <p>© Copyright 2021 Reobiz. All Rights Reserved.</p>
+                         <p>   © 2019 Tüm Hakları Saklıdır. | Netfast, bir <a href="https://netcom.com.tr"> NETCOM A.Ş.</a> kuruluşudur.
+
+                           </p>
                      </div>
                  </div>
                  <div class="col-lg-6 col-md-4 text-right sm-text-center">

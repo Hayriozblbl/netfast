@@ -59,7 +59,7 @@
                                             <a href="{{   route('admin.team.edit',$team->id) }}"> <i
                                                     class="feather icon-edit font-medium-5"></i> </a>
                                             <a href=""
-                                                onclick="if(confirm('Are You sure you want to delete this')){event.preventDefault();document.getElementById('delete-form-{{ $team->id }}').submit();}else{event.preventDefault();}">
+                                                onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $team->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
                                             <form id="delete-form-{{ $team->id }}" method="post"
                                                 action="{{ route('admin.team.destroy',$team->id) }}">
