@@ -121,7 +121,7 @@
                     <span class="menu-title" data-i18n="Dökümanlar">Dökümanlar</span>
                 </a>
                 <ul class="menu-content" style="">
-                    <li><a href="{{ route('admin.category.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Döküman Kategorileri</span></a>
+                    <li><a href="{{ route('admin.document.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Döküman Kategorileri</span></a>
                     </li>
                     <li><a href="{{ route('admin.deposites.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Döküman</span></a>
                     </li>

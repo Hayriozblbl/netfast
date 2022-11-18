@@ -14,6 +14,9 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'
 Route::resource('post', 'PostController');
 Route::resource('category', 'CategoryController');
 
+Route::resource('document', 'DocumentCategoryController');
+
+
 Route::delete('post/image/{id}', 'PostController@deleteImage');
 Route::resource('announcement', 'AnnouncementController');
 // Route::resource('category', 'CategoryController');
