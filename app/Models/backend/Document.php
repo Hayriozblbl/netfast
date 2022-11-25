@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models\backend;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DocumentCategory extends Model
+class Document extends Model
 {
     //
 }

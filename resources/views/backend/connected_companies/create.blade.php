@@ -20,7 +20,7 @@
                                 <input name="name" type="text" class="form-control" id="inputEmail4"
                                     placeholder="Firma Adı">
                             </div>
-                         
+
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -36,7 +36,24 @@
                                 </div>
                             </div>
                             <div class="form-row">
-
+                                <div class="form-group col-md-6">
+                                    <label class="card-title control-label"
+                                           for="date">Bayi Kategori</label>
+                                    <select id="category_bayi" name="category_bayi" class="form-control" required>
+                                             <option value="0">Toptancı</option>
+                                            <option value="1">Çözüm Ortağı</option>
+                                     </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="card-title control-label"
+                                           for="date">İl</label>
+                                    <select id="category_il" name="category_il" class="form-control" required>
+                                        @foreach ($iller as $il)
+                                            <option
+                                                value="{{ $il->id }}"> {{ $il->name }} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="form-group col-md-6">
 
 
@@ -45,7 +62,7 @@
                                         rows="2"></textarea>
                                         <script type="text/javascript">
       CKEDITOR.replace( 'detail' );
-      CKEDITOR.add            
+      CKEDITOR.add
    </script>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -58,49 +75,13 @@
                                     </div>
 
                                 </div>
-                                <div class="col-8">
+                            </div>
 
-<div class="card">
-    <div class="header">
-        <h2>{{ trans('backend.images') }}</h2>
-    </div>
-    <div class="body">
-        <div class="file-loading">
-   <input id="file-1" type="file" name="src[]" multiple class="file" data-overwrite-initial="false"
-        data-min-file-count="0">
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    $("#file-1").fileinput({
-            rtl: true,
-            showUpload: false,
-            theme: 'fa',
-            uploadUrl: "/image-view",
-            uploadExtraData: function() {
-                return {
-                    _token: $("input[name='_token']").val(),
-                };
-            },
-            allowedFileExtensions: ['jpg', 'png', 'jpeg'],
-            overwriteInitial: false,
-            maxFilesNum: 20,
-            slugCallback: function (filename) {
-                return filename.replace('(', '_').replace(']', '_');
-            }
-        });
-</script>
-
-
-
-    </div>
-                                <button type="submit" class="btn btn-primary">Ekle</button>
+                            <button type="submit" class="btn btn-primary">Ekle</button>
                         </form>
 
 
-                    </div>
-                </div>
+                 </div>
             </div>
         </div>
     </div>

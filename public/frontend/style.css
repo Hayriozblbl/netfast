@@ -55,7 +55,7 @@
 36. Checkout Section CSS
 37. My account Section CSS
 38. Footer CSS
-39. Error 404 CSS 
+39. Error 404 CSS
 40. Scroll Up CSS
 41. Header Cart Modal Css
 42. Preloader Css
@@ -4577,7 +4577,6 @@ input[type=range]::-ms-fill-upper {
     transition: all 0.3s ease;
     font-size: 15px;
     font-weight: 500;
-    text-transform: uppercase;
     height: 115px;
     line-height: 115px;
     padding: 0;
@@ -19835,7 +19834,7 @@ body .modal-backdrop {
 
 
 /*---------------------------------------
-    39. Error 404 CSS 
+    39. Error 404 CSS
 ---------------------------------------*/
 
 .rs-page-error {

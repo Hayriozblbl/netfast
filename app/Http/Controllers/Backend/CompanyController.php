@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\backend\Iller;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\backend\Company;
@@ -26,7 +27,10 @@ class CompanyController extends Controller
      */
     public function create()
     {
-      return view('backend.connected_companies.create');
+        $iller = Iller::all();
+
+
+        return view('backend.connected_companies.create',compact('iller'));
     }
 
     /**
@@ -44,28 +48,31 @@ class CompanyController extends Controller
                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
                 // get extension
                 $extension = $request->file('src')->getClientOriginalExtension();
-    
+
                 $fileNameToStore =  time() . '.' . $extension;
                 // upload
-                $path = $request->file('src')->move('public/uploads/company', $fileNameToStore);
+                $path = $request->file('src')->move('uploads/company', $fileNameToStore);
             } else {
                 $fileNameToStore = 'f_image.jpg';
             }
-    
-      
+
+
+
         $company = new Company;
         $company->src = $fileNameToStore;
         $company->name = $request->name;
          $company->adress = $request->adress;
         $company->konum = $request->konum;
-         $company->detail = $request->detail;
+        $company->category_bayi = $request->category_bayi;
+        $company->category_il = $request->category_il;
+        $company->detail = $request->detail;
          $company->slug =  Str::slug($request->name);
 
-        
+
 
 
         $company->save();
-      
+
         return redirect(route('admin.company.index'));
     }
 
@@ -88,8 +95,10 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
+        $iller = Iller::all();
+
         $company = Company::where('id', $id)->first();
-        return view('backend.connected_companies.edit', compact('company'));
+        return view('backend.connected_companies.edit', compact('company','iller'));
     }
 
     /**
@@ -122,21 +131,22 @@ class CompanyController extends Controller
             $fileNameToStore =  time() . '.' . $extension;
             // upload
 
-            $path = $request->file('src')->move('public/uploads/company', $fileNameToStore);
+            $path = $request->file('src')->move('uploads/company', $fileNameToStore);
 
             $postx->src = $fileNameToStore;
             $postx->save();
         }
         $company = Company::find($id);
         $company->name = $request->name;
- 
+
         $company->adress = $request->adress;
         $company->konum = $request->konum;
-        
+        $company->category_bayi = $request->category_bayi;
+        $company->category_il = $request->category_il;
         $company->slug =  Str::slug($request->name);
         $company->detail = $request->detail;
          $company->save();
-        
+
         return redirect(route('admin.company.index'));
 
     }

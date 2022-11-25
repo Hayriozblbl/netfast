@@ -84,46 +84,25 @@
 
                 </ul>
             </li>
-
-
-
-
-
-
-            <li class="nav-item has-sub @if(Request::segment(2) == " finance" ) open @endif">
-                <a href="#"><i class="feather icon-feather"></i>
-                    <span class="menu-title" data-i18n="Finans Detaylar">Finans Detaylar</span>
+            <li class="nav-item ">
+                <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span class="menu-title" data-i18n="User">@lang('backend.sliders')</span>
                 </a>
-                <ul class="menu-content" style="">
-                    <li><a href="{{ route('admin.dues.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Aidat</span></a>
-                    </li>
-                    <li><a href="{{ route('admin.deposites.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Depozito</span></a>
-                    </li>
-                    <li><a href="{{ route('admin.shoppings.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Alışveriş</span></a>
-                    </li>
-                    <li><a href="{{ route('admin.financeones.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Finans 1</span></a>
-                    </li>
-                    <li><a href="{{ route('admin.financetwos.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Finans 2</span></a>
-                    </li>
-                    <li><a href="{{ route('admin.financetotals.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Finans Detayı</span></a>
-                    </li>
-
-
-                </ul>
             </li>
-
 
             <li><a href="{{ route('admin.shopping.index') }}"><i class="feather icon-shopping-cart"></i><span class="menu-item" data-i18n="Select">Ürünler</span></a>
             </li>
-
+            <li class="@if(Request::segment(2) == " post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i class="feather icon-message-square"></i><span class="menu-item" data-i18n="Select">Blog</span></a>
+            </li>
+            <li class="@if(Request::segment(2) == " announcement" ) active @endif"><a href="{{ route('admin.announcement.index') }}"><i class="feather icon-edit"></i><span class="menu-item" data-i18n="Select">Duyurular</span></a>
+            </li>
             <li class="nav-item has-sub @if(Request::segment(2) == " document" ) open @endif">
                 <a href="#"><i class="feather icon-feather"></i>
                     <span class="menu-title" data-i18n="Dökümanlar">Dökümanlar</span>
                 </a>
                 <ul class="menu-content" style="">
-                    <li><a href="{{ route('admin.document.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Döküman Kategorileri</span></a>
+                    <li><a href="{{ route('admin.document-category.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Döküman Kategorileri</span></a>
                     </li>
-                    <li><a href="{{ route('admin.deposites.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Döküman</span></a>
+                    <li><a href="{{ route('admin.document.index') }}"><i class="feather icon-check-square"></i><span class="menu-item" data-i18n="Select">Döküman</span></a>
                     </li>
 
                 </ul>
@@ -176,7 +155,7 @@
 
 
             <li class=" nav-item ">
-                <a href="{{ route('admin.company.index') }}"><i class="feather icon-link-2"></i><span class="menu-title" data-i18n="User">Anlaşmalı Firmalar</span>
+                <a href="{{ route('admin.company.index') }}"><i class="feather icon-link-2"></i><span class="menu-title" data-i18n="User">Nereden Alınır?</span>
                 </a>
             </li>
 
@@ -219,16 +198,13 @@
             </li> --}}
 
 
-            <li class=" nav-item ">
-                <a href="{{ route('admin.slider.index') }}"><i class="feather icon-monitor"></i><span class="menu-title" data-i18n="User">@lang('backend.sliders')</span>
-                </a>
-            </li>
-            <li class=" nav-item ">
+
+            <li class="nav-item ">
                 <a href="{{ route('admin.about.edit') }}"><i class="feather icon-help-circle"></i><span class="menu-title" data-i18n="User">@lang('backend.about')</span>
                 </a>
             </li>
 
-            <li class=" nav-item ">
+            <li class="nav-item ">
                 <a href="{{ route('admin.setting.edit') }}"><i class="feather icon-settings"></i><span class="menu-title" data-i18n="User">@lang('backend.setting')</span>
                 </a>
             </li>

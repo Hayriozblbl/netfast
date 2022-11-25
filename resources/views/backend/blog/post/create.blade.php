@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">{{ trans('backend.posts') }}</h4>
+                    <h4 class="card-title">Blog</h4>
                     @include('includes.partials.messages')
                 </div>
                 <div class="card-content">
@@ -86,7 +86,7 @@
                     <div class="card overflow-hidden">
                         <div class="card-content">
                             <div class="card-body">
-                               
+
                                 <!-- Tab panes -->
                                 <div class="tab-content pt-1">
                                     <div class="tab-pane active" id="home-post" role="tabpanel"
@@ -100,7 +100,7 @@
                                         <textarea type="text" class="ckeditor" name="text_tr"> </textarea>
                                         <script type="text/javascript">
       CKEDITOR.replace( 'text_tr' );
-      CKEDITOR.add            
+      CKEDITOR.add
    </script>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@ selectYears: 20
 
 
 
-               
+
 
 
             </div>

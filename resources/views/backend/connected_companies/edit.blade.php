@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">{{ trans('backend.sectors') }}</h4>
+                    <h4 class="card-title">Firma Düzenle</h4>
                     @include('includes.partials.messages')
                 </div>
                 <div class="card-content">
@@ -25,11 +25,11 @@
                                     placeholder="Firma Adı" value="{{ old('name', $company->name) }}">
                             </div>
 
- 
+
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputAddress">Addres</label>
+                                <label for="inputAddress">Adres</label>
                                 <input name="adress" type="text" class="form-control" id="inputAddress"
                                     placeholder="1234 Tuna Caddesi" value="{{ old('adress', $company->adress) }}">
                             </div>
@@ -39,6 +39,36 @@
                                 <input name="konum" type="text" class="form-control" id="inputAddress2"
                                     placeholder="Kayseri , İstanbul" value="{{ old('konum', $company->konum) }}">
                             </div>
+                            <div class="form-group col-md-6">
+                                <label class="card-title control-label"
+                                       for="date">Kategori Bayi</label>
+
+                                <select id="category_bayi" name="category_bayi" class="form-control" required>
+                                    <option value="0" @if($company->category_bayi==0) selected @endif>Toptancı</option>
+                                    <option value="1" @if($company->category_bayi==1) selected @endif>Çözüm Ortağı</option>
+
+                                 </select>
+
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="card-title control-label"
+                                       for="date">Kategori İl</label>
+
+                                <select id="category_il" name="category_il" class="form-control" required>
+                                    @foreach ($iller as $il)
+                                        <option value="{{ $il->id }}"
+                                                @if ($company->category_il == $il->id)
+                                                selected
+                                            @endif
+                                        >{{ $il->name }}</option>
+
+                                    @endforeach
+                                </select>
+
+
+                            </div>
+
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -47,7 +77,7 @@
                                     rows="5">{{$company->detail}}</textarea>
                                     <script type="text/javascript">
       CKEDITOR.replace( 'detail' );
-      CKEDITOR.add            
+      CKEDITOR.add
    </script>
                             </div>
                             <div class="form-group col-md-6">
@@ -62,9 +92,12 @@
                                 </div>
 
                             </div>
-
+                        </div>
 
                             <button type="submit" class="btn btn-primary">Güncelle</button>
+
+                            <a type="button" class="btn btn-warning"
+                               href="{{   route('admin.company.index')   }}">{{ trans('backend.back') }}</a>
                             </form>
 
 

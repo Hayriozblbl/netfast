@@ -11,7 +11,7 @@
                     <div class="card-content">
                         <div class="card-body">
 
-                                <form role="form" action="{{ route('admin.document.store') }}" class="form form-horizontal" method="post" enctype="multipart/form-data">
+                                <form role="form" action="{{ route('admin.document-category.store') }}" class="form form-horizontal" method="post" enctype="multipart/form-data">
                                                 {{ csrf_field() }}
 
 
@@ -74,7 +74,7 @@
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                         <a type="button" class="btn btn-warning"
-                           href="{{   route('admin.document.index')   }}">{{ trans('backend.back') }}</a>
+                           href="{{   route('admin.document-category.index')   }}">{{ trans('backend.back') }}</a>
                     </div>
                             </form>
                         </div>

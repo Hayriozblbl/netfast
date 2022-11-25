@@ -14,7 +14,7 @@
                 <div class="card-content">
                     <div class="card-body">
 
-                        <a href="{{   route('admin.documents.create')   }}"  class="btn btn-primary mb-2"><i
+                        <a href="{{   route('admin.document.create')   }}"  class="btn btn-primary mb-2"><i
                                 class="feather icon-plus"></i>&nbsp;
                             {{ trans('backend.new') }}
                         </a>
@@ -25,11 +25,9 @@
                                         <th>S. NO</th>
 
 
-                                        <th>{{ trans('backend.image') }}</th>
 
                                         <th>{{ trans('backend.title') }}</th>
                                         <th>{{ trans('backend.text') }}</th>
-                                        <th>{{ trans('backend.type') }}</th>
 
 
                                         <th>{{ trans('backend.action') }}</th>
@@ -38,35 +36,28 @@
                                 <tbody>
 
 
-                                    @foreach ($posts as $post)
+                                    @foreach ($documents as $document)
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
 
 
-                                        <td align="center"> <img style="height: 50px;width: 50px;" class="img-circle"
-                                                src="{{  URL::to('uploads/posts/')}}/{{ $post->f_image }}"></td>
 
 
-                                        <td>{{ $post->title }}</td>
+                                        <td>{{ $document->title }}</td>
 
-                                        <td>{!! Str::words($post->text ,10,'...') !!}</td>
+                                        <td>{!! Str::words($document->text ,10,'...') !!}</td>
 
 
-                                             <td>
-                                            @foreach ($post->unit_types as $unit)
-                                            {{ $unit->name  }}
-                                            @endforeach
-                                        </td>
 
 
                                         <td>
-                                            <a href="{{   route('admin.documents.edit',$post->id) }}"> <i
+                                            <a href="{{   route('admin.document.edit',$document->id) }}"> <i
                                                     class="feather icon-edit font-medium-5"></i> </a>
                                             <a href=""
-                                                onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $post->id }}').submit();}else{event.preventDefault();}">
+                                                onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $document->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
-                                            <form id="delete-form-{{ $post->id }}" method="post"
-                                                action="{{ route('admin.documents.destroy',$post->id) }}">
+                                            <form id="delete-form-{{ $document->id }}" method="post"
+                                                action="{{ route('admin.document.destroy',$document->id) }}">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                             </form>
@@ -82,11 +73,9 @@
                                         <th>S. NO</th>
 
 
-                                        <th>{{ trans('backend.image') }}</th>
 
                                         <th>{{ trans('backend.title') }}</th>
                                         <th>{{ trans('backend.text') }}</th>
-                                        <th>{{ trans('backend.type') }}</th>
 
                                         <th>{{ trans('backend.action') }}</th>
 

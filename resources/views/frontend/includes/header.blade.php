@@ -15,19 +15,18 @@
                     <div class="col-md-5">
                         <div class="toolbar-contact">
                             <ul>
-                                <li><i class="flaticon-email"></i><a href="mailto:info@yourwebsite.com">support@rstheme.com</a></li>
-                                <li><i class="flaticon-call"></i><a href="tel:+123456789">(+123) 456789</a></li>
+                                <li><i class="flaticon-email"></i><a href="mailto:{{ GeneralSiteSettings('site_email')}}">{{ GeneralSiteSettings('site_email')}}</a></li>
+                                <li><i class="flaticon-call"></i><a href="tel:{{ GeneralSiteSettings('site_phone')}}">{{ GeneralSiteSettings('site_phone')}}</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="toolbar-sl-share">
                             <ul>
-                                <li class="opening"> <i class="flaticon-clock"></i> Mon - Fri: 9:00 am - 06.00pm / Closed on Weekends</li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="opening"> <i class="flaticon-clock"></i> Pzt - Cuma: 8:30 - 18:00  / Haftsonu Kapalı</li>
+                                 <li><a href="{{GeneralSiteSettings('site_twitter_url') }}"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="{{GeneralSiteSettings('site_youtube_url') }}"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="{{GeneralSiteSettings('site_linkedin_url') }}"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,12 +41,12 @@
             <div class="menu-area menu-sticky">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <div class="logo-area">
                                 <a href="{{route('frontend.index')}}"><img src="{{asset('uploads/settings/')}}/{{GeneralSiteSettings('site_logo') }}" alt="{{ GeneralSiteSettings('site_title') }}"></a>
                             </div>
                         </div>
-                        <div class="col-lg-9 text-right">
+                        <div class="col-lg-10 text-right">
                             <div class="rs-menu-area">
                                 <div class="main-menu">
                                     <div class="mobile-menu">
@@ -68,12 +67,17 @@
                                                     <li><a href="{{route('frontend.announcements')}}">Duyurular</a></li>
                                                     <li><a href="{{route('frontend.gallery')}}">Videolar</a></li>
                                                     <li><a href="{{route('frontend.events')}}">Etkinlikler</a></li>
+                                                    <li><a href="https://b2b.netfast.com.tr/">Nereden Alınır?</a></li>
+                                                    <li><a href="https://b2b.netfast.com.tr/">Arızalı Ürün Gönderimi</a></li>
+
 
                                                 </ul>
                                             </li>
 
+                                            <li><a href="{{route('frontend.teknik-dokumanlar')}}">Teknik Dökümanlar</a></li>
+                                            <li><a href="{{route('frontend.sss')}}">S.S.S</a></li>
+                                            <li><a href="https://b2b.netfast.com.tr/">Bayi Giriş Portalı</a></li>
 
-                                            <li class="last-item"><a href="{{route('frontend.sss')}}">S.S.S</a></li>
                                             <li><a href="{{URL('/news')}}">Blog</a></li>
 
                                             <li><a href="{{route('frontend.contact')}}">İletişim</a></li>
@@ -84,29 +88,7 @@
                                     </nav>
                                 </div>
                                 <!-- //.main-menu -->
-                                <div class="expand-btn-inner">
-                                    <ul>
-                                        <li class="search-parent">
-                                            <a class="hidden-xs rs-search" data-target=".search-modal" data-toggle="modal" href="#">
-                                                <i class="flaticon-search"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a id="nav-expander" class="humburger nav-expander" href="#">
-                                                <span class="dot1"></span>
-                                                <span class="dot2"></span>
-                                                <span class="dot3"></span>
-                                                <span class="dot4"></span>
-                                                <span class="dot5"></span>
-                                                <span class="dot6"></span>
-                                                <span class="dot7"></span>
-                                                <span class="dot8"></span>
-                                                <span class="dot9"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                             </div>
                         </div>
                     </div>
                 </div>

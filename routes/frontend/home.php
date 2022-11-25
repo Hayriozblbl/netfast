@@ -17,7 +17,7 @@ use App\Http\Controllers\Frontend\User\DuesController;
 use App\Http\Controllers\Frontend\User\DepositesController;
 use App\Http\Controllers\Frontend\User\FinanceonesController;
 use App\Http\Controllers\Frontend\User\FinancetwosController;
-use App\Http\Controllers\Frontend\User\FinancetotalsController;
+use App\Http\Controllers\Frontend\TeknikDokumanlarController;
 use App\Http\Controllers\Frontend\User\ShoppingController;
 
 
@@ -32,6 +32,20 @@ Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::get('about', [AboutController::class, 'index'])->name('about');
 
 Route::get('sss', [SssController::class, 'sss'])->name('sss');
+
+Route::get('teknik-dokumanlar', 'FrontPagesController@document')->name('teknik-dokumanlar');
+Route::get('teknik-dokumanlar/sub/{id}', 'FrontPagesController@sub_category')->name('sub_category');
+Route::get('teknik-dokumanlar/detay/{id}', 'FrontPagesController@document_detay')->name('document_detay');
+
+//Route::get('teknik-dokumanlar', [TeknikDokumanlarController::class, 'index'])->name('teknik-dokumanlar');
+//Route::get('teknik-dokumanlar', [TeknikDokumanlarController::class, 'index'])->name('detay');
+//
+//// news
+//Route::get('news', 'FrontPagesController@news')->name('news');
+////getting all activities by  cliking in unittype
+//Route::get('news/unit/{unittype}', 'FrontPagesController@unit_type_news')->name('unit_type_news');
+//// activity single
+//Route::get('news/single/{post}', 'FrontPagesController@news_single')->name('new');
 
 
 Route::get('about/members', [MembersController::class, 'index'])->name('members');

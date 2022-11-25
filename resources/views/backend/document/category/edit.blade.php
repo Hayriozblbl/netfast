@@ -16,7 +16,7 @@
                         <div class="card-body">
 
 
-                            <form   role="form" action="{{ route('admin.document.update',$category->id) }}" class="form form-horizontal" method="POST"
+                            <form   role="form" action="{{ route('admin.document-category.update',$category->id) }}" class="form form-horizontal" method="POST"
                                     enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
@@ -53,7 +53,7 @@
                                     <div class="box-footer">
                                         <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                                         <a type="button" class="btn btn-warning"
-                                           href="{{   route('admin.document.index')   }}">{{ trans('backend.back') }}</a>
+                                           href="{{   route('admin.document-category.index')   }}">{{ trans('backend.back') }}</a>
                                     </div>
                                 </div>
                             </form>

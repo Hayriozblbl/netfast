@@ -23,11 +23,9 @@
                                     <tr>
                                         <th scope="col">Logo</th>
                                         <th scope="col">Firma Adı</th>
-                                        <th scope="col">Kategori</th>
-                                        <th scope="col">Adres</th>
-                                        <th scope="col">Konum</th>
-                                        <th scope="col">Detaylar</th>
-                                        <th scope="col">Eylemler</th>
+                                         <th scope="col">Konum</th>
+                                        <th scope="col">İl</th>
+                                        <th scope="col" style="float: right">Eylemler</th>
 
                                     </tr>
                                 </thead>
@@ -37,21 +35,25 @@
 
                                         <th scope="col"><img src="{{ URL::to('uploads/company',$com->src)}}" style="width:50px;"></th>
                                         <th scope="col">{{$com->name}} </th>
-                                        <th scope="col">{{$com->category}}</th>
-                                        <th scope="col">{{$com->adress}}</th>
-                                        <th scope="col">{{$com->konum}} </th>
-                                        <th scope="col">{!! $com->detail !!} </th>
-                                        <th scope="col">
-                                            <a href="{{route('admin.company.edit',$com->id)}}" title="Düzenle"
-                                                class="btn btn-sm btn-primary"><i class="fa fa-pen">Düzenle</i>
-                                                <a  href="{{route('admin.delete.company',$com->id)}}" title="Sil" style="margin-left:3px;" class="btn btn-sm btn-danger">Sil</a>
+                                         <th scope="col">{{$com->konum}} </th>
+                                        <th scope="col">{{$com->category_il}} </th>
+                                        <td style="float: right">
+                                            <a href="{{   route('admin.company.edit',$com->id) }}"> <i
+                                                    class="feather icon-edit font-medium-5"></i> </a>
+                                            <a href=""
+                                               onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $com->id }}').submit();}else{event.preventDefault();}">
+                                                <i class="feather icon-trash  font-medium-5"> </i></a>
+                                            <form id="delete-form-{{ $com->id }}" method="post"
+                                                  action="{{ route('admin.delete.company',$com->id) }}">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                            </form>
 
-                                            </a>
-                                        </th>
+                                        </td>
 
                                     </tr>
-                                 
-                        
+
+
                         @endforeach
 
 
@@ -71,19 +73,20 @@
 @endsection
 
 
+
 @section('page-js')
-<!-- BEGIN: Page Vendor JS-->
-<script src="{{asset('backend/app-assets/vendors/js/tables/datatable/pdfmake.min.js')}}"></script>
-<script src="{{asset('backend/app-assets/vendors/js/tables/datatable/vfs_fonts.js')}}"></script>
-<script src="{{asset('backend/app-assets/vendors/js/tables/datatable/datatables.min.js')}}"></script>
-<script src="{{asset('backend/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
-<script src="{{asset('backend/app-assets/vendors/js/tables/datatable/buttons.html5.min.js')}}"></script>
-<script src="{{asset('backend/app-assets/vendors/js/tables/datatable/buttons.print.min.js')}}"></script>
-<script src="{{asset('backend/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js')}}"></script>
-<script src="{{asset('backend/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
-<!-- END: Page Vendor JS-->
-<!-- BEGIN: Page JS-->
-<script src="{{asset('backend/app-assets/js/scripts/datatables/datatable.min.js')}}"></script>
-<!-- END: Page JS-->
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{asset('backend/app-assets/vendors/js/tables/datatable/pdfmake.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/tables/datatable/vfs_fonts.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/tables/datatable/datatables.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/tables/datatable/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/tables/datatable/buttons.print.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js')}}"></script>
+    <script src="{{asset('backend/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Page JS-->
+    <script src="{{asset('backend/app-assets/js/scripts/datatables/datatable.min.js')}}"></script>
+    <!-- END: Page JS-->
 
 @endsection

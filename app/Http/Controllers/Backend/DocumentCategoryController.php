@@ -55,7 +55,7 @@ class DocumentCategoryController extends Controller
         $category->category_name = $request->category_name;
          $category->category_slug = $request->category_slug;
         $category->save();
-        return redirect(route('admin.document.index'));
+        return redirect(route('admin.document-category.index'));
     }
 
     /**
@@ -101,7 +101,7 @@ class DocumentCategoryController extends Controller
         $category->category_name = $request->category_name;
         $category->category_slug = $request->category_slug;
         $category->save();
-        return redirect(route('admin.document.index'));
+        return redirect(route('admin.document-category.index'));
     }
 
     /**

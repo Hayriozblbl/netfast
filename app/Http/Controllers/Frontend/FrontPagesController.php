@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Auth\User;
+use App\Models\backend\Document;
+use App\Models\backend\DocumentCategory;
 use App\Models\backend\team;
 use App\Models\backend\Event;
 use App\Models\frontend\post;
@@ -39,6 +41,46 @@ class FrontPagesController extends BaseFrontendController
 
         $activities = activity::orderBy("id", "desc")->paginate(6);
         return view('frontend.activities.activities', compact('activities','posts'));
+    }
+
+
+    public function document()
+    {
+
+        $posts = post::orderBy("id", "desc")->paginate(6);
+
+        $document = Document::orderBy("id", "desc")->get();
+
+        $categories = DocumentCategory::wherenull('category_id')->orderBy("id", "desc")->get();
+
+
+         return view('frontend.teknik-dokumanlar.teknik-dokuman', compact('document','categories','posts'));
+    }
+
+    public function sub_category($id)
+    {
+
+        $posts = post::orderBy("id", "desc")->paginate(6);
+        //$document = Document::orderBy("id", "desc")->paginate(6);
+
+        $categories = DocumentCategory::Where('category_id',$id)->orderBy("id", "desc")->get();
+        $categories_title = DocumentCategory::wherenull('category_id')->orderBy("id", "desc")->get();
+
+
+        return view('frontend.teknik-dokumanlar.sub', compact('categories','posts','categories_title'));
+    }
+
+    public function document_detay($id)
+    {
+
+        $posts = post::orderBy("id", "desc")->paginate(6);
+
+        $document = Document::where('category_id',$id)->orderBy("id", "desc")->get();
+
+        $categories = DocumentCategory::Where('category_id',$id)->orderBy("id", "desc")->get();
+
+
+        return view('frontend.teknik-dokumanlar.detay', compact('document','posts','categories'));
     }
 
 
