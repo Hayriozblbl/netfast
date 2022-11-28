@@ -55,14 +55,6 @@
 
                 <div class="col-lg-4 md-mb-50 pl-35 lg-pl-15 md-order-first">
                     <div id="sticky-sidebar" class="blog-sidebar">
-                        <div class="sidebar-search sidebar-grid shadow mb-50">
-                            <form class="search-bar">
-                                <input type="text" placeholder="Search...">
-                                <span>
-                                    <button type="submit"><i class="flaticon-search"></i></button>
-                                </span>
-                            </form>
-                        </div>
 
 
 

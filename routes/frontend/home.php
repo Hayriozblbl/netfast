@@ -27,15 +27,19 @@ use App\Http\Controllers\Frontend\User\ShoppingController;
  * All route names are prefixed with 'frontend.'.
  */
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::get('iletisim', [ContactController::class, 'index'])->name('contact');
 
-Route::get('about', [AboutController::class, 'index'])->name('about');
+Route::get('hakkimizda', [AboutController::class, 'index'])->name('about');
 
 Route::get('sss', [SssController::class, 'sss'])->name('sss');
 
 Route::get('teknik-dokumanlar', 'FrontPagesController@document')->name('teknik-dokumanlar');
-Route::get('teknik-dokumanlar/sub/{id}', 'FrontPagesController@sub_category')->name('sub_category');
+Route::get('teknik-dokumanlar/kategori/{id}', 'FrontPagesController@sub_category')->name('sub_category');
 Route::get('teknik-dokumanlar/detay/{id}', 'FrontPagesController@document_detay')->name('document_detay');
+
+
+
+Route::get('nereden-alinir', 'FrontPagesController@nereden_alinir')->name('nereden-alinir');
 
 //Route::get('teknik-dokumanlar', [TeknikDokumanlarController::class, 'index'])->name('teknik-dokumanlar');
 //Route::get('teknik-dokumanlar', [TeknikDokumanlarController::class, 'index'])->name('detay');
@@ -57,7 +61,7 @@ Route::get('about/board-of-directors', [FrontPagesController::class, 'board_of_d
 
 
 // gallery
-Route::get('media-gallery', [FrontPagesController::class, 'gallery'])->name('gallery');
+Route::get('videolar', [FrontPagesController::class, 'gallery'])->name('gallery');
 
 
 
@@ -108,13 +112,13 @@ Route::get('activities/single/{activity}', 'FrontPagesController@activity')->nam
 
 
 // events
-Route::get('/events', 'FrontPagesController@events')->name('events');
+Route::get('/etkinlikler', 'FrontPagesController@events')->name('events');
 
 Route::get('/member_postings', 'FrontPagesController@member_posting')->name('member_postings');
 
 
 // event single
-Route::get('/events/single/{event?}', 'FrontPagesController@event')->name('event');
+Route::get('/etkinlikler/detay/{event?}', 'FrontPagesController@event')->name('event');
 
 Route::get('/member_postings/single/{member_posting?}', 'FrontPagesController@member_posting_single')->name('member_posting');
 
@@ -135,18 +139,14 @@ Route::get('/shopping/shopping-detail/{shoppings?}', 'FrontPagesController@shopp
 
 
 // news
-Route::get('news', 'FrontPagesController@news')->name('news');
-//getting all activities by  cliking in unittype
-Route::get('news/unit/{unittype}', 'FrontPagesController@unit_type_news')->name('unit_type_news');
+Route::get('blog', 'FrontPagesController@news')->name('news');
 // activity single
-Route::get('news/single/{post}', 'FrontPagesController@news_single')->name('new');
+Route::get('blog/detay/{post}', 'FrontPagesController@news_single')->name('new');
 
 // announcements
-Route::get('announcements', 'FrontPagesController@announcements')->name('announcements');
-//getting all activities by  cliking in unittype
-Route::get('announcements/unit/{unittype}', 'FrontPagesController@unit_type_announcements')->name('unit_type_announcements');
+Route::get('duyurular', 'FrontPagesController@announcements')->name('announcements');
 // activity single
-Route::get('announcements/single/{announcement}', 'FrontPagesController@announcements_single')->name('announcement');
+Route::get('duyurular/detay/{announcement}', 'FrontPagesController@announcements_single')->name('announcement');
 
 
 

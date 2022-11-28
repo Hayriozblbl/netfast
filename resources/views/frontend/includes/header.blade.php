@@ -23,7 +23,7 @@
                     <div class="col-md-7">
                         <div class="toolbar-sl-share">
                             <ul>
-                                <li class="opening"> <i class="flaticon-clock"></i> Pzt - Cuma: 8:30 - 18:00  / Haftsonu Kapalı</li>
+                                <li class="opening"> <i class="flaticon-clock"></i> Pzt - Cuma: 8:30 - 18:00  / Haftasonu Kapalı</li>
                                  <li><a href="{{GeneralSiteSettings('site_twitter_url') }}"><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="{{GeneralSiteSettings('site_youtube_url') }}"><i class="fa fa-youtube"></i></a></li>
                                 <li><a href="{{GeneralSiteSettings('site_linkedin_url') }}"><i class="fa fa-linkedin"></i></a></li>
@@ -67,7 +67,7 @@
                                                     <li><a href="{{route('frontend.announcements')}}">Duyurular</a></li>
                                                     <li><a href="{{route('frontend.gallery')}}">Videolar</a></li>
                                                     <li><a href="{{route('frontend.events')}}">Etkinlikler</a></li>
-                                                    <li><a href="https://b2b.netfast.com.tr/">Nereden Alınır?</a></li>
+                                                    <li><a href="{{route('frontend.nereden-alinir')}}">Nereden Alınır?</a></li>
                                                     <li><a href="https://b2b.netfast.com.tr/">Arızalı Ürün Gönderimi</a></li>
 
 
@@ -78,7 +78,7 @@
                                             <li><a href="{{route('frontend.sss')}}">S.S.S</a></li>
                                             <li><a href="https://b2b.netfast.com.tr/">Bayi Giriş Portalı</a></li>
 
-                                            <li><a href="{{URL('/news')}}">Blog</a></li>
+                                            <li><a href="{{URL('/blog')}}">Blog</a></li>
 
                                             <li><a href="{{route('frontend.contact')}}">İletişim</a></li>
 

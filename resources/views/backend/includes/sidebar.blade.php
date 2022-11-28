@@ -107,12 +107,32 @@
 
                 </ul>
             </li>
-            <li class="@if(Request::segment(2) == " post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i class="feather icon-message-square"></i><span class="menu-item" data-i18n="Select">{{ trans('backend.posts') }}</span></a>
+            <li class="@if(Request::segment(2) == " post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i class="feather icon-message-square"></i><span class="menu-item" data-i18n="Select">Blog</span></a>
             </li>
             <li class="@if(Request::segment(2) == " announcement" ) active @endif"><a href="{{ route('admin.announcement.index') }}"><i class="feather icon-edit"></i><span class="menu-item" data-i18n="Select">Duyurular</span></a>
             </li>
-            <li><a href="{{ route('admin.contact_forms.index') }}"><i class="feather icon-mail"></i><span class="menu-item" data-i18n="Select">{{ trans('backend.contacts_forms') }}</span></a>
+
+            <li class=" nav-item ">
+                <a href="{{ route('admin.events.index') }}"><i class="feather icon-share-2"></i><span class="menu-title" data-i18n="User">@lang('backend.events')</span>
+                </a>
             </li>
+            <li class=" nav-item ">
+                <a href="{{ route('admin.gallery.index') }}"><i class="feather icon-image"></i><span class="menu-title" data-i18n="User">Videolar</span>
+                </a>
+            </li>
+            <li class=" nav-item ">
+                <a href="{{ route('admin.company.index') }}"><i class="feather icon-link-2"></i><span class="menu-title" data-i18n="User">Nereden Alınır?</span>
+                </a>
+            </li>
+            <li class=" nav-item ">
+                <a href="{{ route('admin.sss.index') }}"><i class="feather icon-airplay"></i><span class="menu-title" data-i18n="User">Sıkça sorulan Sorular</span>
+                </a>
+            </li>
+
+
+            <!-- Yoruma Alınanlar -->
+{{--            <li><a href="{{ route('admin.contact_forms.index') }}"><i class="feather icon-mail"></i><span class="menu-item" data-i18n="Select">{{ trans('backend.contacts_forms') }}</span></a>--}}
+{{--            </li>--}}
 
 
 
@@ -123,28 +143,21 @@
 </li>
 -->
 
-            <li class=" nav-item ">
-                <a href="{{ route('admin.events.index') }}"><i class="feather icon-share-2"></i><span class="menu-title" data-i18n="User">@lang('backend.events')</span>
-                </a>
-            </li>
 
-            <li class=" nav-item ">
-                <a href="{{ route('admin.gallery.index') }}"><i class="feather icon-image"></i><span class="menu-title" data-i18n="User">@lang('backend.gallery')</span>
-                </a>
-            </li>
 
-            <li class=" nav-item ">
-                <a href="{{ route('admin.advert.index') }}"><i class="feather icon-image"></i><span class="menu-title" data-i18n="User">Üye İlanları</span>
-                </a>
-            </li>
-            <li class=" nav-item ">
-                <a href="{{ route('admin.activity.index') }}"><i class="feather icon-share-2"></i><span class="menu-title" data-i18n="User">Faaliyetler</span>
-                </a>
-            </li>
-            <li class=" nav-item ">
-                <a href="{{ route('admin.static.edit') }}"><i class="feather icon-layers"></i><span class="menu-title" data-i18n="User">@lang('backend.pages')</span>
-                </a>
-            </li>
+
+{{--            <li class=" nav-item ">--}}
+{{--                <a href="{{ route('admin.advert.index') }}"><i class="feather icon-image"></i><span class="menu-title" data-i18n="User">Üye İlanları</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--            <li class=" nav-item ">--}}
+{{--                <a href="{{ route('admin.activity.index') }}"><i class="feather icon-share-2"></i><span class="menu-title" data-i18n="User">Faaliyetler</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--            <li class=" nav-item ">--}}
+{{--                <a href="{{ route('admin.static.edit') }}"><i class="feather icon-layers"></i><span class="menu-title" data-i18n="User">@lang('backend.pages')</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
 
             <!--<li class=" nav-item ">
     <a href="{{ route('admin.company.index') }}"><i class="feather icon-cpu"></i><span class="menu-title"
@@ -154,15 +167,9 @@
 -->
 
 
-            <li class=" nav-item ">
-                <a href="{{ route('admin.company.index') }}"><i class="feather icon-link-2"></i><span class="menu-title" data-i18n="User">Nereden Alınır?</span>
-                </a>
-            </li>
 
-            <li class=" nav-item ">
-                <a href="{{ route('admin.sss.index') }}"><i class="feather icon-airplay"></i><span class="menu-title" data-i18n="User">Sıkça sorulan Sorular</span>
-                </a>
-            </li>
+
+
 
 
             {{-- <li class=" nav-item ">

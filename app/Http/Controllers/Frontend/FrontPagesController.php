@@ -116,6 +116,18 @@ class FrontPagesController extends BaseFrontendController
     }
 
 
+    public function nereden_alinir()
+    {
+        $posts = post::orderBy("id", "desc")->paginate(6);
+
+        $company = Company::get();
+
+        $toptanci = Company::where("category_bayi", 0)->get();
+        $bayi = Company::where("category_bayi", 1)->get();
+
+        return view('frontend.nereden-alinir', compact('company','toptanci','bayi','posts'));
+    }
+
     public function news()
     {
 
@@ -132,20 +144,6 @@ class FrontPagesController extends BaseFrontendController
 
         return view('frontend.news.new-single', compact('posts','post'));
     }
-
-
-
-
-
-
-
-    public function unit_type_news(unit_type $unittype)
-    {
-        $posts = $unittype->posts();
-        $activities = $unittype->activities();
-        return view('frontend.news.news_by_unit', compact('unittype', 'posts', 'activities','posts'));
-    }
-
 
     public function announcements()
     {
@@ -165,19 +163,10 @@ class FrontPagesController extends BaseFrontendController
 
         $announcements = announcement::orderBy("id", "desc")->paginate(6);
 
-        return view('frontend.announcements.announcement-single', compact('announcement','announcements','posts'));
+        return view('frontend.announcements.announcement-single', compact('announcements','announcement','posts'));
     }
 
 
-    public function unit_type_announcements(unit_type $unittype)
-    {
-                $posts = post::orderBy("id", "desc")->paginate(6);
-
-
-        $announcements = $unittype->announcements();
-        $activities = $unittype->activities();
-        return view('frontend.announcements.announcements_by_unit', compact('unittype', 'announcements', 'activities','posts'));
-    }
 
 
     public function organizational_structure()

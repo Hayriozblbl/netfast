@@ -90,10 +90,9 @@
                  </div>
                  <div class="col-lg-6 col-md-4 text-right sm-text-center">
                      <ul class="footer-social">
-                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                         <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                         <li><a href="{{GeneralSiteSettings('site_twitter_url') }}"><i class="fa fa-instagram"></i></a></li>
+                         <li><a href="{{GeneralSiteSettings('site_youtube_url') }}"><i class="fa fa-youtube"></i></a></li>
+                         <li><a href="{{GeneralSiteSettings('site_linkedin_url') }}"><i class="fa fa-linkedin"></i></a></li>
                      </ul>
                  </div>
              </div>

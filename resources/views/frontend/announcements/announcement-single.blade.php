@@ -26,7 +26,7 @@
                 <div class="col-lg-8">
                     <div class="blog-part">
                         <div class="blog-img">
-                            <a href="{{route('frontend.announcements',$announcement->slug)}}"><img src="{{asset('uploads/announcements/')}}/{{$announcement->f_image}}" alt="{{$announcement->title}}"></a>
+                            <a href="{{route('frontend.announcement',$announcement->slug)}}"><img src="{{asset('uploads/announcements/')}}/{{$announcement->f_image}}" alt="{{$announcement->title}}"></a>
                         </div>
                         <div class="article-content shadow mb-60">
                             <ul class="blog-meta mb-22">

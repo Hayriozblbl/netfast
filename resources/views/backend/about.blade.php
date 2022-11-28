@@ -11,17 +11,16 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <div class="row">
 
 
                             <form role="form" action="{{ route('admin.about.update') }}" method="post"
                                 enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                <div class="row">
+
                                     <div class="col-sm-6">
-                                        <div class="card">
-                                            <div class="header">
-                                                <h2>{{ trans('backend.about_image') }}</h2>
+                                        <div class="card overflow-hidden">
+                                            <div class="card-header">
+                                                <h2>Logo</h2>
                                             </div>
                                             <div class="body">
 
@@ -32,49 +31,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="card">
-                                            <div class="header">
-                                                <h2>{{ trans('backend.counter') }}{{ trans('backend.image') }}</h2>
-                                            </div>
-                                            <div class="body">
 
-                                                <input type="file" class="dropify"
-                                                    data-default-file="{{ URL::to('uploads/about', $about->counter_image) }}"
-                                                    data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG"
-                                                    name="counter_image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card overflow-hidden">
-            <div class="card-header">
-                <h4 class="card-title">{{ trans('backend.url') }}</h4>
-            </div>
-<input type="text" class="form-control" name="url" value="{{   $about->url }}"
-    aria-required="true">
-
-
-            </div>
-            </div>
-            </div>
-
-
-
-
-                                <div class="row">
-                                    <div class="col-sm-12">
+                                     <div class="col-sm-12">
                                         <div class="card overflow-hidden">
                                             <div class="card-header">
-                                                <h4 class="card-title">{{ trans('backend.about_title') }}</h4>
+                                                <h4 class="card-title">Hakkımızda Başlık</h4>
                                             </div>
                                             <div class="card-content">
                                                 <div class="card-body">
-                                                   
+
                                                     <!-- Tab panes -->
                                                     <div class="tab-content pt-1">
                                                         <div class="tab-pane active" id="home-just" role="tabpanel"
@@ -82,7 +47,7 @@
                                                             <input type="text" class="form-control"
                                                                 name="about_title_tr"
                                                                 value="{{   $about->about_title_tr }}" aria-required="true"><br>
-                                                            <h4 class="card-title">{{ trans('backend.about_text') }} </h4>
+                                                            <h4 class="card-title">Hakkımızda </h4>
                                                             <textarea type="text" id="summary-ckeditor" class="form-control"
                                                                 name="about_text_tr">{!! $about->about_text_tr !!}</textarea>
                                                         </div>
@@ -91,131 +56,19 @@
                                             </div>
                                         </div>
                                     </div>
+
+
+
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light">{{ trans('backend.save') }}</button>
+                                    <a type="button" class="btn btn-warning"
+                                       href="{{   route('admin.dashboard')   }}">{{ trans('backend.back') }}</a>
                                 </div>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card overflow-hidden">
-            <div class="card-header">
-                <h4 class="card-title">{{ trans('backend.mission_title') }}</h4>
-            </div>
-            <div class="card-content">
-                <div class="card-body">
-                   
-                    <!-- Tab panes -->
-                    <div class="tab-content pt-1">
-                        <div class="tab-pane active" id="home-mission" role="tabpanel"
-                            aria-labelledby="home-tab-mission">
-                        
-                            <input type="text"
-                                class="form-control" name="mission_title_tr" value="{{   $about->mission_title_tr }}"
-                                aria-required="true">
-                            <h4 class="card-title"><br>
-                                {{ trans('backend.mission_text') }}</h4>
-                            <textarea type="text"  class="ckeditor"
-                                name="mission_text_tr">{!! $about->mission_text_tr !!}</textarea>
-                                <script type="text/javascript">
-      CKEDITOR.replace( 'mission_text_tr' );
-      CKEDITOR.add            
-   </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card overflow-hidden">
-            <div class="card-header">
-                <h4 class="card-title">{{ trans('backend.vision_title') }}</h4>
-            </div>
-            <div class="card-content">
-                <div class="card-body">
-                   
-                    <!-- Tab panes -->
-                    <div class="tab-content pt-1">
-                        <div class="tab-pane active" id="home-vision" role="tabpanel"
-                            aria-labelledby="home-tab-justified">
-                        
-   <input type="text" class="form-control" name="vision_title_tr" value="{{   $about->vision_title_tr }}"
-                                aria-required="true">
-                            <h4 class="card-title"><br>
-                                {{ trans('backend.vision_text') }}</h4>
-                            <textarea type="text"  class="ckeditor"  
-                                name="vision_text_tr">{!! $about->vision_text_tr !!}</textarea>
-                                <script type="text/javascript">
-      CKEDITOR.replace( 'vision_text_tr' );
-      CKEDITOR.add            
-   </script>
-                
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
- <div class="row">
-    <div class="col-sm-12">
-        <div class="card overflow-hidden">
-            <div class="card-header">
-                <h4 class="card-title">{{ trans('backend.objectives_title') }}</h4>
-            </div>
-            <div class="card-content">
-                <div class="card-body">
-                    <!-- Tab panes -->
-                    <div class="tab-content pt-1">
-                        <div class="tab-pane active" id="home-objectives" role="tabpanel"
-                            aria-labelledby="home-tab-justified">
-                             <input type="text" class="form-control" name="objectives_title_tr"
-                                value="{{   $about->objectives_title_tr }}" aria-required="true">
-                            <h4 class="card-title"><br>
-                                {{ trans('backend.objectives_text') }}</h4>
-                            <textarea type="text" class="ckeditor" 
-                                name="objectives_text_tr">{!! $about->objectives_text_tr !!}</textarea>
-                                <script type="text/javascript">
-      CKEDITOR.replace( 'objectives_text_tr' );
-      CKEDITOR.add            
-   </script>
-                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
- 
-
- 
-
-
-
-
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card overflow-hidden">
-
-            <div class="card-content">
-                <div class="card-body">
-
-    <button type="submit" class="btn btn-primary btn-round">{{ trans('backend.save') }}</button>
-    <a type="button" class="btn btn-warning" href="{{   route('admin.dashboard')   }}">{{ trans('backend.back') }}</a>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 
 
                             </form>
-</div>
+
 </div>
 </div>
 </div>

@@ -27,7 +27,7 @@
                     @foreach ($announcements as $announcement)
                     <div class="blog-wrap shadow mb-70 xs-mb-50">
                             <div class="image-part">
-                                <a href="{{route('frontend.announcements',$announcement->slug)}}"> <img src="{{asset('uploads/announcements/')}}/{{$announcement->f_image}}" alt="{{$announcement->title}}" style="max-height:200px;"></a>
+                                <a href="{{route('frontend.announcement',$announcement->slug)}}"> <img src="{{asset('uploads/announcements/')}}/{{$announcement->f_image}}" alt="{{$announcement->title}}" style="max-height:200px;"></a>
 
                             </div>
                             <div class="content-part">

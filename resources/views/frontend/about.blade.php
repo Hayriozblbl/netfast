@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="btn-part">
-                            <a class="readon"{{ (route('frontend.contact')) }} href="">İletişim</a>
+                            <a class="readon" href="{{ (route('frontend.contact')) }}">İletişim</a>
                         </div>
                     </div>
                 </div>
