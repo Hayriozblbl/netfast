@@ -34,7 +34,7 @@
                                             <img src="{{asset('frontend/assets/images/services/icons/style10/PDF_icon.png')}}" alt="">
                                         </div>
                                         <div class="content-part">
-                                            <h4 class="title"><a href="services-single.html">{{$doc->title}}</a></h4>
+                                            <h4 class="title"><a href="{{asset('uploads/documents/')}}/{{ $doc->f_image}}">{{$doc->title}}</a></h4>
                                          </div>
                                     </div>
                                 </div>
