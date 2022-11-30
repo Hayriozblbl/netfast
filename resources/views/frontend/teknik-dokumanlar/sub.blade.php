@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Sıkça Sorulan Sorular')
+@section('title', 'Teknik Dökümanlar')
 
 @section('content')
 

@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="content-part">
                                     <h5 class="title"> {{ $ba->name}} </h5>
-                                    <div class="desc">{{ $ba->category_il }}</div>
+                                    <div class="desc">{{ $ba->il_getir->name }}</div>
                                 </div>
                             </div>
                         </div>

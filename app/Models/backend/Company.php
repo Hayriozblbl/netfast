@@ -13,4 +13,9 @@ class Company extends Model
     {
         return  'slug';
     }
+
+    public function il_getir()
+    {
+        return $this->belongsTo(Iller::class, 'category_il','id');
+    }
 }
