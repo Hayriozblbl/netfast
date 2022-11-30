@@ -33,8 +33,7 @@
                                 <div class="content-part">
                                     <h5 class="title">                                    <img src="{{asset('frontend/assets/images/services/icons/style10/click.png')}}" style="width: 30px;" alt="">
                                         <a href="{{route('frontend.sub_category',$category->id)}}">{{$category->category_name}}</a></h5>
-                                    <p>Detayları görmek içim tıklayınız.</p>
-                                </div>
+                                 </div>
                             </div>
                         </div>
                     @endforeach
