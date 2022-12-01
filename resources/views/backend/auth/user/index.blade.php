@@ -48,7 +48,7 @@
                             @foreach($users as $user)
                             <tr>
                                 <td align="center"> <img style="height: 50px;width: 50px;" class="img-circle"
-                                                src="{{ asset('storage')}}/members/profiles/ZfE7TfK3rDO01ZtaUr072skjYyH1SEjvOFXRnyOU.png"></td>
+                                                         src="{{asset('storage')}}/{{$logged_in_user->profile_image}}></td>
                                 <td>{{ $user->full_name }}</td>
                                 <td>{{ $user->email }}</td>
 
