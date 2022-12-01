@@ -30,9 +30,7 @@
                              Netfast ; Draytek , Synology ve Engenius markalarının Türkiye Distribütörlüğünü yapmaktadır.
                              <br>
                              Netfast , Türkiye’de değişimin öncüleri arasında yer alan NETCOM A.Ş.'nin sahip olduğu geniş bilgi, tecrübe ve iş ortakları ağını en iyi şekilde değerlendirmektedir.</p>
-                         <div class="btn-part">
-                             <a class="readon" href="{{('fontend.about')}}">Hakkımızda</a>
-                         </div>
+
                      </div>
                  </div>
                  <div class="col-lg-4 col-md-12 col-sm-12 md-mb-32 footer-widget">
