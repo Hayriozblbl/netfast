@@ -107,10 +107,6 @@
 
                 </ul>
             </li>
-            <li class="@if(Request::segment(2) == " post" ) active @endif"><a href="{{ route('admin.post.index') }}"><i class="feather icon-message-square"></i><span class="menu-item" data-i18n="Select">Blog</span></a>
-            </li>
-            <li class="@if(Request::segment(2) == " announcement" ) active @endif"><a href="{{ route('admin.announcement.index') }}"><i class="feather icon-edit"></i><span class="menu-item" data-i18n="Select">Duyurular</span></a>
-            </li>
 
             <li class=" nav-item ">
                 <a href="{{ route('admin.events.index') }}"><i class="feather icon-share-2"></i><span class="menu-title" data-i18n="User">@lang('backend.events')</span>
