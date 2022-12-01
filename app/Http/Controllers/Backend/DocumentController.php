@@ -182,6 +182,7 @@ class DocumentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Document::where('id',$id)->delete();
+        return redirect()->back();
     }
 }
