@@ -157,8 +157,8 @@
                 <div class="row">
                     <div class="col-lg-8 form-part">
                         <div class="sec-title mb-35 md-mb-30">
-                            <div class="sub-title primary">Bizimle İletişime Geçin</div>
-                         </div>
+                             <h2 class="title mb-0">Bizimle İletişime Geçin</h2>
+                        </div>
                         <div id="form-messages"></div>
                         <form id="contact-form" class="contact-form" method="post" action="https://rstheme.com/products/html/reobiz/mailer.php">
                             <div class="row">
