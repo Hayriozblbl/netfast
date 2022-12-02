@@ -36,7 +36,7 @@
                         <div class="col-lg-4 md-mb-30">
                             <div class="info-item">
                                 <div class="icon-part">
-                                    <i class="fa fa-envelope-o"></i>
+                                    <i class="fa fa-at"></i>
                                 </div>
                                 <div class="content-part">
                                     <h4 class="title">E-posta Adresi:</h4>
