@@ -55,27 +55,7 @@
                             @endif
                         </a>
                     </li>
-                    <li class=" nav-item ">
-                        <a href="{{ route('admin.team.index') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="User">Başkanlarımız</span>
-                        </a>
-                    </li>
-                    <li class=" nav-item ">
-                        <a href="{{ route('admin.founding_members.index') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="User">Kurucu Üyeler</span>
-                        </a>
-                    </li>
-                    <li class=" nav-item ">
-                        <a href="{{ route('admin.supervisoryboard.index') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="User">Denetleme Kurulu</span>
-                        </a>
-                    </li>
-                    <li class=" nav-item ">
-                        <a href="{{ route('admin.advisory.index') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="User">Danışma & istişare Kurulu</span>
-                        </a>
-                    </li>
 
-                    <li class=" nav-item ">
-                        <a href="{{ route('admin.boardofdirectory.index') }}"><i class="feather icon-users"></i><span class="menu-title" data-i18n="User">Yönetim Kurulu</span>
-                        </a>
-                    </li>
 
                     <li class=" nav-item @if(Request::segment(3) == " role" ) active @endif ">
                             <a href=" {{ route('admin.auth.role.index') }}"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="User">@lang('labels.backend.access.roles.management')</span>
