@@ -32,41 +32,40 @@
                 <div class="table-responsive">
                      <table class="table table-striped dataex-html5-selectors">
                         <thead>
-                            <tr>
-                                <th>@lang('frontend.profile_image')</th>
-                                <th>@lang('backend.full_name')</th>
-                                <th>@lang('labels.backend.access.users.table.email')</th>
-                                 <th>@lang('labels.backend.access.users.table.confirmed')</th>
-                                <th>@lang('labels.backend.access.users.table.roles')</th>
+                        <tr>
+                            <th>@lang('frontend.profile_image')</th>
+                            <th>@lang('backend.full_name')</th>
+                            <th>@lang('labels.backend.access.users.table.email')</th>
+                            <th>@lang('labels.backend.access.users.table.confirmed')</th>
+                            <th>@lang('labels.backend.access.users.table.roles')</th>
+                            <th>@lang('labels.backend.access.users.table.other_permissions')</th>
 
-                                <th>{{ trans('backend.member_card') }}</th>
 
-                                 <th>@lang('labels.general.actions')</th>
-                            </tr>
+                            <th>@lang('labels.backend.access.users.table.last_updated')</th>
+
+                            <th>@lang('labels.general.actions')</th>
+                        </tr>
                         </thead>
                         <tbody>
                             @foreach($users as $user)
-                            <tr>
-                                <td align="center"> <img style="height: 50px;width: 50px;" class="img-circle"
-                                                         src="{{asset('storage')}}/{{$logged_in_user->profile_image}}></td>
-                                <td>{{ $user->full_name }}</td>
-                                <td>{{ $user->email }}</td>
+                                <tr>
+                                    <td align="center"> <img style="height: 50px;width: 50px;" class="img-circle"
+                                                             src="{{ asset('storage')}}/{{$user->profile_image }}"></td>
+                                    <td>{{ $user->full_name }}</td>
+                                    <td>{{ $user->email }}</td>
 
 
 
+                                    <td>@include('backend.auth.user.includes.confirm', ['user' => $user])</td>
+                                    <td>{{ $user->roles_label }}</td>
 
 
-                                <td>@include('backend.auth.user.includes.confirm', ['user' => $user])</td>
-                                <td>{{ $user->roles_label }}</td>
 
-                                <td><a href="{{ route('admin.auth.user.member_card',$user->id) }}" class="btn btn-primary btn-sm ajax-modal">{{ trans('backend.print') }}</a>
+                                    <td>@include('backend.auth.user.includes.social-buttons', ['user' => $user])</td>
+                                    <td>{{ $user->updated_at->diffForHumans() }}</td>
+                                    <td class="btn-td">@include('backend.auth.user.includes.actions', ['user' => $user])
                                     </td>
-
-                                <td>@include('backend.auth.user.includes.social-buttons', ['user' => $user])</td>
-
-                                <td class="btn-td">@include('backend.auth.user.includes.actions', ['user' => $user])
-                                </td>
-                            </tr>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
