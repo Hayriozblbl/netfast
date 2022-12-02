@@ -25,7 +25,7 @@
                         <div class="col-lg-4 md-mb-30">
                             <div class="info-item">
                                 <div class="icon-part">
-                                    <i class="fa fa-at"></i>
+                                    <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="content-part">
                                     <h4 class="title">Telefon Numarası:</h4>
