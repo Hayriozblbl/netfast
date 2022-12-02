@@ -6,9 +6,13 @@ use App\Http\Controllers\Backend\BaseBackendController;
 use App\Models\Auth\User;
 use App\Models\backend\activity;
 use App\Models\backend\activity_type;
+use App\Models\backend\Company;
 use App\Models\backend\contact_form;
+use App\Models\backend\Document;
 use App\Models\backend\Gallery;
 use App\Models\backend\Advert;
+use App\Models\backend\ShoppingModel;
+use App\Models\backend\Shoppings;
 use App\Models\backend\slider;
 use App\Models\backend\team;
 use App\Models\backend\testimonial;
@@ -49,15 +53,17 @@ class DashboardController extends BaseBackendController
         $sliders = slider::count();
         $contact_forms = contact_form::count();
         $activities = activity::count();
-        //$advert = Advert::count();
+        $gallery = Gallery::count();
         $boards = User::where('is_board',1)->count();
         $activitytypes = activity_type::count();
         $unittypes = unit_type::count();
         $teams = team::count();
         $sectors = sector::count();
         $fields = field::count();
-        $forum_categories = Category::count();
+        $company = Company::count();
+        $shoppings = ShoppingModel::count();
+        $documents = Document::count();
 
-        return view('backend.dashboard',compact('forum_categories','fields','sectors','teams',  'unittypes','activitytypes', 'deleted_users','users','testimonials','posts','sliders','contact_forms','activities','boards'));
+        return view('backend.dashboard',compact('shoppings','documents','gallery','company','fields','sectors','teams',  'unittypes','activitytypes', 'deleted_users','users','testimonials','posts','sliders','contact_forms','activities','boards'));
     }
 }
