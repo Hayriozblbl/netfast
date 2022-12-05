@@ -9,7 +9,7 @@
                         <img src="{{asset('backend/app-assets/images/pages/500.png')}}"
                             class="img-fluid align-self-center" alt="branding logo">
                         <h1 class="font-large-2 mt-1 mb-0">Sizin için yenileniyoruz!</h1>
-
+                        <br><br><br><br><br><br>
                         <div class="content-info-part mb-60">
                             <div class="row gutter-16">
                                 <div class="col-lg-4 md-mb-30">
@@ -50,7 +50,7 @@
 
 
                      <a href="https://b2b.netfast.com.tr/login.aspx?ReturnUrl=%2f"> Bayi Portalına Giriş İçin Tıklayın</a>
-
+                        <br><br><br>
                         <p>Netfast.com.tr Yakında Sizlerleyiz.</p>
                     </div>
                 </div>
