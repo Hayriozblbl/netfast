@@ -44,6 +44,8 @@
                                     <div class="slide-item">
                                         <a href="#">  <img src="{{asset('uploads/events/')}}/{{ $image->gallery_image_path}}" alt=" {{ $event->name_tr }}">
                                         </a>
+
+                                         <iframe width="560" height="315" src="{{$event->location}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     @endforeach
 
@@ -61,7 +63,6 @@
                                             <ul>
                                                 <li><span>Lokasyon:</span> {{  $event->name_tr }}</li>
 
-                                                <li><span>Lokasyon:</span> {{ trans('frontend.location')." : ".$event->location }}</li>
                                                 <li><span>Tarih:</span> {{ date('M',strtotime($event->start_date)) }} {{ date('d',strtotime($event->start_date)) }}  {{ date('Y',strtotime($event->start_date)) }}</li>
                                             </ul>
                                         </div>
