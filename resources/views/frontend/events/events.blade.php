@@ -63,7 +63,7 @@
                                                 <li><span>Etkinlik Adı:</span> {{  $event->name_tr }}</li>
 
                                                 <li><span>Tarih:</span> {{ date('M',strtotime($event->start_date)) }} {{ date('d',strtotime($event->start_date)) }}  {{ date('Y',strtotime($event->start_date)) }}</li>
-                                                <li><span>Detay:</span> {{  $event->text_tr }}</li>
+                                                <li><span>Detay:</span> {!!  $event->text_tr  !!}  </li>
 
                                             </ul>
                                         </div>
