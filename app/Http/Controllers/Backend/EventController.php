@@ -16,7 +16,7 @@ use App\Http\Controllers\Backend\BaseBackendController;
 class EventController extends BaseBackendController
 {
 
-
+ protected $uploadpath;
 
     /**
      * Display a listing of the resource.
