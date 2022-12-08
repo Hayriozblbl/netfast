@@ -45,9 +45,9 @@
                                         <a href="#">  <img src="{{asset('uploads/events/')}}/{{ $image->gallery_image_path}}" alt=" {{ $event->name_tr }}">
                                         </a>
 
-                                         <iframe width="560" height="315" src="{{$event->location}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     @endforeach
+                                        <iframe width="560" height="315" src="{{$event->location}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                                 </div>
                             </div>
