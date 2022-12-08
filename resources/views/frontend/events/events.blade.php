@@ -61,7 +61,7 @@
                                          <div class="sb-project-detail mt-50 md-mt-0">
                                             <h4 class="title">Detaylar</h4>
                                             <ul>
-                                                <li><span>Lokasyon:</span> {{  $event->name_tr }}</li>
+                                                <li><span>Etkinlik Adı:</span> {{  $event->name_tr }}</li>
 
                                                 <li><span>Tarih:</span> {{ date('M',strtotime($event->start_date)) }} {{ date('d',strtotime($event->start_date)) }}  {{ date('Y',strtotime($event->start_date)) }}</li>
                                             </ul>
