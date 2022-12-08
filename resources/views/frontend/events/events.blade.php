@@ -52,7 +52,7 @@
                                 </div>
                             </div>
 
-                             <p class="desc mb-29">{!! $event->text_tr !!}</p>
+                           <h2>Detaylar</h2>  <b class="desc mb-29">{!! $event->text_tr !!}</b>
 
                         </div>
 
