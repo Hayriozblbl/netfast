@@ -86,12 +86,12 @@ Session::forget("gallery_images");
 
 
 public function image_upload(Request $request){
-   $image_array= Session::get("gallery_images")??[];
+    $image_array= Session::get("gallery_images")??[];
     // Start of Upload Files
     if ($request->hasFile('gallery_images')) {
-         $all_images = $request->file('gallery_images');
+          $all_images = $request->file('gallery_images');
         $path = $this->getUploadPath();
-        foreach ($all_images as $file) {
+         foreach ($all_images as $file) {
             $image_name = time() . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
             $file->move($path, $image_name);
             array_push($image_array,$image_name);
@@ -115,7 +115,7 @@ public function image_upload(Request $request){
 
     public function getUploadPath()
     {
-        return $this->uploadPath;
+        return \Config::get('app.APP_URL') . 'upload_event';
     }
 
     public function setUploadPath($uploadPath)
