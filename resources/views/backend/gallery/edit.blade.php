@@ -182,6 +182,7 @@
                                 </div>
 
                             </div>
+
                             <div class="box-footer">
                                 <button type="submit" class="btn btn-primary">{{ trans('backend.save') }}</button>
                                 <a type="button" class="btn btn-warning"

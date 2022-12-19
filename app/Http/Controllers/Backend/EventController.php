@@ -52,6 +52,7 @@ class EventController extends BaseBackendController
             'end_date' => 'required',
             'name_tr' => 'required',
             'text_tr' => 'required',
+            'type' => 'required',
             'location_tr' => 'required'
         ]);
 
@@ -64,6 +65,7 @@ class EventController extends BaseBackendController
         $event->name_tr = $request->name_tr;
         $event->text_tr = $request->text_tr;
         $event->location_tr = $request->location_tr;
+        $event->type = $request->type;
 
         $event->slug =  Str::slug($request->name_tr);
 
@@ -162,6 +164,7 @@ public function image_upload(Request $request){
             'start_date' => 'required',
             'end_date' => 'required',
             'name_tr' => 'required',
+            'type' => 'required',
 
         ]);
 
@@ -175,6 +178,7 @@ public function image_upload(Request $request){
         $event->name_tr = $request->name_tr;
         $event->text_tr = $request->text_tr;
         $event->location_tr = $request->location_tr;
+        $event->type = $request->type;
 
         $event->slug =  Str::slug($request->name_en);
 

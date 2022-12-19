@@ -84,13 +84,13 @@
                 <input type="text" class="form-control" required="required" aria-required="true"  name="name_tr" aria-required="true">
 
                 <h4 class="card-title">
-                    {{ trans('backend.location') }}</h4>
-                <input type="text" class="form-control" required="required" aria-required="true" name="location_tr" aria-required="true">
+                    Embed Link</h4>
+                <input type="text" class="form-control"  aria-required="true" name="location_tr" aria-required="true">
 
 
                 <h4 class="card-title">
                     {{ trans('backend.text') }}</h4>
-                <textarea type="text" class="ckeditor" required="required" aria-required="true"  name="text_tr"> </textarea>
+                <textarea type="text" class="ckeditor"   aria-required="true"  name="text_tr"> </textarea>
                 <script type="text/javascript">
       CKEDITOR.replace( 'text_tr' );
       CKEDITOR.add
@@ -98,7 +98,24 @@
             </div>
         </div>
 
+          <div class="row clealfix">
+              <div class="col-sm-4">
+                  <div class="card">
+                      <div class="header">
+                          <h2>Tip Seçimi</h2>
+                      </div>
+                      <div class="body">
+                          <div class="multiselect_div">
+                              <select id="single-selection" name="type">
+                                  <option value="0">Youtube Embed </option>
+                                  <option value="1"> Resim </option>
+                               </select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
+          </div>
 
 
 <br>

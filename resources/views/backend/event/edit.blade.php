@@ -150,7 +150,30 @@
       CKEDITOR.add
    </script>
     </div>
+</div>
+                    <div class="row clealfix">
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>Tip Seçimi</h2>
+                                </div>
+                                <div class="body">
 
+                                    <select id="single-selection" name="type">
+                                        <option @if ($event->type === 0 ) selected @endif value="0">
+                                            Youtube Embed </option>
+                                        <option @if ($gallery->type === 1 ) selected @endif value="1">
+                                           Resim </option>
+
+                                    </select>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 <br>
 
                             <div class="box-footer">

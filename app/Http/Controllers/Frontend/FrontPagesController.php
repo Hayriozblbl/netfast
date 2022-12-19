@@ -252,7 +252,9 @@ class FrontPagesController extends BaseFrontendController
                 $posts = post::orderBy("id", "desc")->paginate(6);
 
 
-        $events = Event::orderBy("id", "desc")->paginate(6);
+        $events = Event::orderBy("id", "desc")->get();
+
+
         return view('frontend.events.events', compact('events','posts'));
     }
 
