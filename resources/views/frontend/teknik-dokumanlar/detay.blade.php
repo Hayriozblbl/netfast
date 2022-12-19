@@ -28,10 +28,10 @@
                             <div class="row">
                                 @foreach($document as $doc)
 
-                                <div class="col-lg-4 col-sm-6 mb-37">
+                                <div class="col-lg-12 col-sm-6 mb-37">
                                     <div class="featured-wrap">
                                         <div class="icon-part pt-7">
-                                            <img src="{{asset('frontend/assets/images/services/icons/style10/PDF_icon.png')}}" alt="">
+                                            <img src="{{asset('frontend/assets/images/services/icons/4.png')}}" alt="">
                                         </div>
                                         <div class="content-part">
                                             <h4 class="title"><a href="{{asset('uploads/documents/')}}/{{ $doc->f_image}}">{{$doc->title}}</a></h4>
