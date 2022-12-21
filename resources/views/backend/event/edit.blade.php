@@ -91,7 +91,7 @@
                                                         _token: $("input[name='_token']").val(),
                                                     };
                                                 },
-                                                allowedFileExtensions: ['jpg', 'png', 'jpeg'],
+                                                allowedFileExtensions: ['jpg', 'png', 'jpeg','pdf'],
                                                 overwriteInitial: false,
                                                 maxFilesNum: 20,
                                                 slugCallback: function(filename) {
