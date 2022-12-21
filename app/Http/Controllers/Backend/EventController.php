@@ -115,7 +115,7 @@ public function image_upload(Request $request){
 
     public function getUploadPath()
     {
-        return \Config::get('app.APP_URL') . 'upload_event';
+        return \Config::get('app.APP_URL') . 'uploads/events';
     }
 
     public function setUploadPath($uploadPath)

@@ -164,7 +164,8 @@
                                             Youtube Embed </option>
                                         <option @if ($event->type === 1 ) selected @endif value="1">
                                            Resim </option>
-
+                                        <option @if ($event->type === 2 ) selected @endif value="2">
+                                            Pdf </option>
                                     </select>
 
 

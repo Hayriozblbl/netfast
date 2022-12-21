@@ -55,9 +55,22 @@
                                 </div>
                             </div>
 
-                            @else
+                            @elseif($event->type == 0)
                                 <br>
                                 <iframe width="100%" height="520px" src="{{$event->location}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                @else
+                                @foreach ($event->gallery_images as $image)
+
+{{--                                    <div class="slide-item">--}}
+{{--                                        <a href="#">  <img src="{{asset('uploads/events/')}}/{{ $image->gallery_image_path}}" alt=" {{ $event->name_tr }}">--}}
+{{--                                        </a>--}}
+
+{{--                                    </div>--}}
+
+                                    <br>
+                                    <iframe src ="{{ asset('uploads/events/')}}/{{ $image->gallery_image_path}}" width="1000px" height="600px"></iframe>
+
+                                @endforeach
                             @endif
                         </div>
 

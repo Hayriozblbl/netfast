@@ -18,6 +18,7 @@
         "devdojo/chatter": "0.2.*",
         "facade/ignition": "^1.11",
         "fideloper/proxy": "^4.0",
+        "goodnesskay/laravelpdfviewer": "^1.0",
         "graham-campbell/markdown": "^11.2",
         "lab404/laravel-impersonate": "^1.4",
         "langleyfoxall/laravel-nist-password-rules": "^4.0",

@@ -108,8 +108,10 @@
                           <div class="multiselect_div">
                               <select id="single-selection" name="type">
                                   <option value="0">Youtube Embed </option>
-                                  <option value="1"> Resim / Pdf  </option>
-                               </select>
+                                  <option value="1"> Resim  </option>
+                                  <option value="2"> Pdf  </option>
+
+                              </select>
                           </div>
                       </div>
                   </div>
