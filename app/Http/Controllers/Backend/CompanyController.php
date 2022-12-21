@@ -62,7 +62,7 @@ class CompanyController extends Controller
         $company->src = $fileNameToStore;
         $company->name = $request->name;
          $company->adress = $request->adress;
-        $company->konum = $request->konum;
+        $company->website = $request->website;
         $company->category_bayi = $request->category_bayi;
         $company->category_il = $request->category_il;
         $company->detail = $request->detail;
@@ -140,7 +140,7 @@ class CompanyController extends Controller
         $company->name = $request->name;
 
         $company->adress = $request->adress;
-        $company->konum = $request->konum;
+        $company->website = $request->website;
         $company->category_bayi = $request->category_bayi;
         $company->category_il = $request->category_il;
         $company->slug =  Str::slug($request->name);

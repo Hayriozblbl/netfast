@@ -35,9 +35,9 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="inputAddress2">Konum</label>
-                                <input name="konum" type="text" class="form-control" id="inputAddress2"
-                                    placeholder="Kayseri , İstanbul" value="{{ old('konum', $company->konum) }}">
+                                <label for="inputAddress2">Website</label>
+                                <input name="website" type="text" class="form-control" id="inputAddress2"
+                                    placeholder="https://netfast.com.tr" value="{{ old('konum', $company->konum) }}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="card-title control-label"
@@ -86,7 +86,7 @@
                                     <div class="body">
                                         <input type="file" class="dropify"
                                             data-default-file="{{ URL::to('uploads/company',$company->src) }}"
-                                            data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG" name="src">
+                                            data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG pdf" name="src">
 
                                     </div>
                                 </div>

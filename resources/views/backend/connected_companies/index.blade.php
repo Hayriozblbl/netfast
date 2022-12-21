@@ -23,7 +23,7 @@
                                     <tr>
                                         <th scope="col">Logo</th>
                                         <th scope="col">Firma Adı</th>
-                                         <th scope="col">Konum</th>
+                                         <th scope="col">Web Site</th>
                                         <th scope="col">İl</th>
                                         <th scope="col" style="float: right">Eylemler</th>
 
@@ -36,7 +36,7 @@
                                         <th scope="col"><img src="{{ URL::to('uploads/company',$com->src)}}" style="width:50px;"></th>
                                         <th scope="col">{{$com->name}} </th>
                                          <th scope="col">{{$com->konum}} </th>
-                                        <th scope="col">{{$com->category_il}} </th>
+                                        <th scope="col">{{$com->il_getir->name}} </th>
                                         <td style="float: right">
                                             <a href="{{   route('admin.company.edit',$com->id) }}"> <i
                                                     class="feather icon-edit font-medium-5"></i> </a>

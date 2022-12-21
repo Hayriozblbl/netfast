@@ -32,7 +32,7 @@
                             </div>
                             <div class="content-part">
                                 <h5 class="title"> {{ $top->name}} </h5>
-                                <div class="desc">{{ $top->category_il }}</div>
+                                <div class="desc">{{ $top->il_getir->name  }}</div>
                             </div>
                         </div>
                     </div>

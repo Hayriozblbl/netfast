@@ -42,7 +42,7 @@
                               _token: $("input[name='_token']").val(),
                           };
                       },
-                      allowedFileExtensions: ['jpg', 'png', 'jpeg'],
+                      allowedFileExtensions: ['jpg', 'png', 'jpeg','pdf'],
                       overwriteInitial: false,
                       maxFilesNum: 20,
                       slugCallback: function(filename) {
@@ -108,7 +108,7 @@
                           <div class="multiselect_div">
                               <select id="single-selection" name="type">
                                   <option value="0">Youtube Embed </option>
-                                  <option value="1"> Resim </option>
+                                  <option value="1"> Resim / Pdf  </option>
                                </select>
                           </div>
                       </div>
