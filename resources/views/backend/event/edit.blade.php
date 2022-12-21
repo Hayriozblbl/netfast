@@ -134,12 +134,12 @@
         <h4 class="card-title">
             {{ trans('backend.name') }}</h4>
 
-        <input type="text" class="form-control" name="name_tr" value="{{   $event->name_tr }}" aria-required="true">
+        <input type="text" class="form-control" name="name_tr" value="{{   $event->name_tr }}" >
         <h4 class="card-title">
             {{ trans('backend.location') }}</h4>
 
         <input type="text" class="form-control" name="location_tr" value="{{ $event->location_tr }}"
-            aria-required="true">
+           >
 
 
         <h4 class="card-title">

@@ -51,9 +51,7 @@ class EventController extends BaseBackendController
             'start_date' => 'required',
             'end_date' => 'required',
             'name_tr' => 'required',
-            'text_tr' => 'required',
-            'type' => 'required',
-            'location_tr' => 'required'
+            'type' => 'required'
         ]);
 
 

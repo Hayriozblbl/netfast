@@ -85,12 +85,12 @@
 
                 <h4 class="card-title">
                     Embed Link</h4>
-                <input type="text" class="form-control"  aria-required="true" name="location_tr" aria-required="true">
+                <input type="text" class="form-control"   name="location_tr" >
 
 
                 <h4 class="card-title">
                     {{ trans('backend.text') }}</h4>
-                <textarea type="text" class="ckeditor"   aria-required="true"  name="text_tr"> </textarea>
+                <textarea type="text" class="ckeditor"   name="text_tr"> </textarea>
                 <script type="text/javascript">
       CKEDITOR.replace( 'text_tr' );
       CKEDITOR.add
