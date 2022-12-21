@@ -162,7 +162,7 @@
                                     <select id="single-selection" name="type">
                                         <option @if ($event->type === 0 ) selected @endif value="0">
                                             Youtube Embed </option>
-                                        <option @if ($gallery->type === 1 ) selected @endif value="1">
+                                        <option @if ($event->type === 1 ) selected @endif value="1">
                                            Resim </option>
 
                                     </select>
