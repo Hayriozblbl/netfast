@@ -230,7 +230,7 @@
                                 </div>
                                 <div class="content-part">
                                     <h4>Çalışma Saatlerimiz</h4>
-                                    <p>Pzt-Cuma:09:00-18:00</p>
+                                    <p>Pzt-Cuma: 09:00-18:00</p>
                                     <p>Ctesi-Pazar: Kapalı</p>
                                 </div>
                             </div>

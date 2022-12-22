@@ -23,7 +23,7 @@
                     <div class="col-md-7">
                         <div class="toolbar-sl-share">
                             <ul>
-                                <li class="opening"> <i class="flaticon-clock"></i> Pzt - Cuma: 8:30 - 18:00  / Haftasonu Kapalı</li>
+                                <li class="opening"> <i class="flaticon-clock"></i> Pzt - Cuma: 09:00 - 18:00  / Haftasonu Kapalı</li>
                                  <li><a href="{{GeneralSiteSettings('site_twitter_url') }}"><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="{{GeneralSiteSettings('site_youtube_url') }}"><i class="fa fa-youtube"></i></a></li>
                                 <li><a href="{{GeneralSiteSettings('site_linkedin_url') }}"><i class="fa fa-linkedin"></i></a></li>
