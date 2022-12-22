@@ -37,7 +37,7 @@
                             <div class="form-group col-md-6">
                                 <label for="inputAddress2">Website</label>
                                 <input name="website" type="text" class="form-control"
-                                       placeholder="https://netfast.com.tr" value="{{ old('konum', $company->konum) }}">
+                                       placeholder="https://netfast.com.tr" value="{{ old('website', $company->konum) }}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="card-title control-label"
