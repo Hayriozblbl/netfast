@@ -30,9 +30,7 @@
     height: 230px;
 ">
                             <div class="icon-part">
-                                <img src="{{asset('uploads/company/')}}/{{ $top->src}}" style="
-    max-width: 120px;
-" alt="{{ $top->name}}">
+                                <img src="{{asset('uploads/company/')}}/{{ $top->src}}" style="max-width: 120px;max-height: 100px;" alt="{{ $top->name}}">
                             </div>
                             <div class="content-part">
                                 <h5 class="title"> {{ $top->name}} </h5>
@@ -54,7 +52,7 @@
     height: 230px;
 ">
                                 <div class="icon-part">
-                                    <img src="{{asset('uploads/company/')}}/{{ $ba->src}}" style="max-width: 120px;" alt="{{ $ba->name}}">
+                                    <img src="{{asset('uploads/company/')}}/{{ $ba->src}}" style="max-width: 120px;max-height: 100px;" alt="{{ $ba->name}}">
                                 </div>
                                 <div class="content-part">
                                     <h5 class="title"> {{ $ba->name}} </h5>
