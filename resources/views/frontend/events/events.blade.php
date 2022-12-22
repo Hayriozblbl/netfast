@@ -36,9 +36,9 @@
 
                         <div class="col-lg-12 pr-55 md-pr-15">
 
-                            <h5>{{  $event->name_tr }} </h5>
-
-                             <span>{{ date('M',strtotime($event->start_date)) }} {{ date('d',strtotime($event->start_date)) }}  {{ date('Y',strtotime($event->start_date)) }}:</span>
+                            <h2>{{  $event->name_tr }} </h2>
+                            <i class="fa fa-calendar-check-o">  <span>{{ date('M',strtotime($event->start_date)) }} {{ date('d',strtotime($event->start_date)) }}  {{ date('Y',strtotime($event->start_date)) }}</span>
+                            </i>
                             @if($event->type == 1)
 
                             <div class="slider-area mb-50">

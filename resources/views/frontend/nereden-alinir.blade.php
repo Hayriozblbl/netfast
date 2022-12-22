@@ -24,7 +24,11 @@
 
 @foreach($toptanci as $top)
                     <div class="col-lg-3 col-sm-6 mb-16">
-                        <div class="service-wrap">
+                        <div class="service-wrap" style="
+    width: auto;
+    height: fit-content;
+    height: 230px;
+">
                             <div class="icon-part">
                                 <img src="{{asset('uploads/company/')}}/{{ $top->src}}" style="
     max-width: 240px;
@@ -44,7 +48,11 @@
 
                     @foreach($bayi as $ba)
                         <div class="col-lg-3 col-sm-6 mb-16">
-                            <div class="service-wrap">
+                            <div class="service-wrap" style="
+    width: auto;
+    height: fit-content;
+    height: 230px;
+">
                                 <div class="icon-part">
                                     <img src="{{asset('uploads/company/')}}/{{ $ba->src}}" style="max-width: 240px;" alt="{{ $ba->name}}">
                                 </div>
