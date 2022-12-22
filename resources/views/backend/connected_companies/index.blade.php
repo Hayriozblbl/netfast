@@ -35,7 +35,7 @@
 
                                         <th scope="col"><img src="{{ URL::to('uploads/company',$com->src)}}" style="width:50px;"></th>
                                         <th scope="col">{{$com->name}} </th>
-                                         <th scope="col">{{$com->konum}} </th>
+                                         <th scope="col">{{$com->website}} </th>
                                         <th scope="col">{{$com->il_getir->name}} </th>
                                         <td style="float: right">
                                             <a href="{{   route('admin.company.edit',$com->id) }}"> <i
