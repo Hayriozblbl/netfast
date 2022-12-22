@@ -31,13 +31,13 @@
                             <div class="form-group col-md-6">
                                 <label for="inputAddress">Adres</label>
                                 <input name="adress" type="text" class="form-control" id="inputAddress"
-                                    placeholder="1234 Tuna Caddesi" value="{{ old('adress', $company->adress) }}">
+                                    placeholder=Ankara value="{{ old('adress', $company->adress) }}">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="inputAddress2">Website</label>
                                 <input name="website" type="text" class="form-control"
-                                       placeholder="https://netfast.com.tr" value="{{ old('website', $company->konum) }}">
+                                       placeholder="https://netfast.com.tr" value="{{ old('website', $company->website) }}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="card-title control-label"

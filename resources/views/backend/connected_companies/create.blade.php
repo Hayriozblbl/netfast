@@ -30,15 +30,15 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="inputAddress2">Website</label>
-                                    <input name="website" type="text" class="form-control" id="inputAddress2"
+                                    <label>Website</label>
+                                    <input name="website" type="text" class="form-control"
                                         placeholder="https://netfast.com.tr">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label class="card-title control-label"
-                                           for="date">Bayi Kategori</label>
+                                           >Bayi Kategori</label>
                                     <select id="category_bayi" name="category_bayi" class="form-control" required>
                                              <option value="0">Toptancı</option>
                                             <option value="1">Çözüm Ortağı</option>
