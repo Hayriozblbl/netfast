@@ -111,8 +111,7 @@ class CompanyController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'adress' => 'required',
+            'name' => 'required'
 
         ]);
         if ($request->hasFile('src')) {
