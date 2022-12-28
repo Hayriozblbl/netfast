@@ -26,11 +26,11 @@
                     @foreach($categories as $category)
 
                         <div class="col-lg-4 col-sm-6 mb-37">
-                            <div class="featured-wrap">
+                            <div class="featured-wrap col-lg-1">
                                 <div class="icon-part pt-7">
                                     <img src="{{asset('frontend/assets/images/services/icons/style10/1.png')}}" alt="">
                                 </div>
-                                <div class="content-part">
+                                <div class="content-part col-lg-3">
                                     <h5 class="title"><a href="{{route('frontend.document_detay',$category->id)}}">{{$category->category_name}}</a></h5>
                                 </div>
                             </div>
