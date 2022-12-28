@@ -29,7 +29,7 @@
                                 @foreach($document as $doc)
 
                                 <div class="col-lg-12 col-sm-6 mb-37">
-                                    <div class="featured-wrap col-lg-1">
+                                    <div class="featured-wrap">
                                         <div class="icon-part pt-7  col-lg-1">
                                             <img src="{{asset('frontend/assets/images/services/icons/4.png')}}" alt="">
                                         </div>
