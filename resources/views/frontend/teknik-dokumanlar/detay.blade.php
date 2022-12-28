@@ -33,7 +33,7 @@
                                         <div class="icon-part pt-7">
                                             <img src="{{asset('frontend/assets/images/services/icons/4.png')}}" alt="">
                                         </div>
-                                        <div class="content-part col-lg-3">
+                                        <div class="content-part col-lg-10">
                                             <h4 class="title"><a href="{{asset('uploads/documents/')}}/{{ $doc->f_image}}">{{$doc->title}}</a></h4>
                                          </div>
                                     </div>
