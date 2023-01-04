@@ -24,7 +24,7 @@
                             <div class="sec-title text-center mb-62 md-mb-34 sm-mb-45">
                                 @foreach($categories as $cat)
                                 <h2 class="title mb-0 bottom-wave">{{$cat->category_name}}</h2>
-                                    @dd($categories)
+
                                 @endforeach
                             </div>
                             <div class="sidebar-search sidebar-grid shadow mb-50">

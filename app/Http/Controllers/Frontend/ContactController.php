@@ -22,7 +22,7 @@ class ContactController extends BaseFrontendController
     {
 
         $posts = post::orderBy("id", "desc")->paginate(6);
-        return view('frontend.contact',compact('posts'));
+        return view('frontend.contact', compact('posts'));
     }
 
     /**
