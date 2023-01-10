@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\backend\Event;
 use App\Models\backend\Iller;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -160,8 +161,26 @@ class CompanyController extends Controller
         Company::find($id)->delete();
         return redirect(route('admin.company.index'));
     }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-     //
+        $event = Company::find($id);
+        // Delete a style_logo_en photo
+        if ($event->image != "") {
+            unlink('uploads/company/' . $event->image);
+        }
+        $event->delete();
+        return redirect('admin/company')->with('success', trans('Information has been deleted sucessfully'));
     }
+
+
+
+
 }

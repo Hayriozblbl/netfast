@@ -43,8 +43,8 @@
                                             <a href=""
                                                onclick="if(confirm('Silmek İstediğinize Emin Misiniz?')){event.preventDefault();document.getElementById('delete-form-{{ $com->id }}').submit();}else{event.preventDefault();}">
                                                 <i class="feather icon-trash  font-medium-5"> </i></a>
-                                            <form id="delete-form-{{ $com->id }}" method="post"
-                                                  action="{{ route('admin.delete.company',$com->id) }}">
+
+                                            <form id="delete-form-{{ $com->id }}" method="post" action="{{ route('admin.company.destroy',$com->id) }}">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                             </form>
