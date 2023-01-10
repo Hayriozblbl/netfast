@@ -87,7 +87,7 @@
                                     <input type="text" name="phone" placeholder="Telefon Numarası" required="">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" name="website" placeholder="Firma Adı" required="">
+                                    <input type="text" name="subject" placeholder="Firma Adı" required="">
                                 </div>
                                 <div class="col-md-12">
                                     <textarea name="message" placeholder="Mesajınızı Yazın" required=""></textarea>

@@ -33,6 +33,8 @@ class ContactController extends BaseFrontendController
     public function send(SendContactRequest $request)
     {
 
+
+
         $contact_form  = new contact_form;
         $contact_form->name   = $request->name;
         $contact_form->subject = $request->subject;
@@ -40,6 +42,8 @@ class ContactController extends BaseFrontendController
         $contact_form->email = $request->email;
         $contact_form->message = $request->message;
         $contact_form->save();
+
+
         Mail::send(new SendContact($request));
         return redirect()->back()->withFlashSuccess(__('alerts.frontend.contact.sent'));
     }

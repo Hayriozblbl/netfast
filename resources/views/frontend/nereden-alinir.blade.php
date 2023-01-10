@@ -33,7 +33,7 @@
                                 <img src="{{asset('uploads/company/')}}/{{ $top->src}}" style="max-width: 120px;max-height: 100px;" alt="{{ $top->name}}">
                             </div>
                             <div class="content-part">
-                                <h5 class="title"> {{ $top->name}} </h5>
+                                <a href="{{ $top->website}}"> <h5 class="title"> {{ $top->name}} </h5></a>
                                 <div class="desc">{{ $top->il_getir->name  }}</div>
                             </div>
                         </div>
@@ -55,8 +55,7 @@
                                     <img src="{{asset('uploads/company/')}}/{{ $ba->src}}" style="max-width: 120px;max-height: 100px;" alt="{{ $ba->name}}">
                                 </div>
                                 <div class="content-part">
-                                    <h5 class="title"> {{ $ba->name}} </h5>
-                                    <div class="desc">{{ $ba->il_getir->name }}</div>
+                                    <a href="{{ $ba->website}}"> <h5 class="title"> {{ $ba->name}} </h5></a>                                      <div class="desc">{{ $ba->il_getir->name }}</div>
                                 </div>
                             </div>
                         </div>

@@ -48,12 +48,7 @@ class SliderController extends BaseBackendController
   public function store(Request $request)
   {
 
-    // return  $request->all();
-    $this->validate($request, [
-      'title_tr' => ['required', 'string', 'max:255'],
 
-      // 'image'=> ['required'],
-    ]);
 
     if ($request->hasFile('image')) {
       $fileNameWithExt = $request->file('image')->getClientOriginalName();
@@ -139,10 +134,7 @@ class SliderController extends BaseBackendController
   public function update(Request $request, $id)
   {
 
-    $this->validate($request, [
-      'title_tr' => ['required', 'string', 'max:255'],
 
-    ]);
 
 
     // Start of Upload Files
