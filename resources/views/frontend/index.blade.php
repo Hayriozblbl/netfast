@@ -36,7 +36,7 @@
                         <div class="service-wrap">
 
                             <div class="content-part">
-                                <a href="netfastdraytek.php"><img src="{{('frontend/assets/img/marka/dry.png')}}" width="100%" height="auto" /></a>
+                                <a href="https://www.draytek.com/" target="_blank"><img src="{{('frontend/assets/img/marka/dry.png')}}" width="100%" height="auto" /></a>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="service-wrap">
 
                             <div class="content-part">
-                                <a href="netfastengenius.php"> <img src="{{('frontend/assets/img/marka/engenius_logo.png')}}" width="100%" height="auto" /></a>
+                                <a href="https://www.engeniustech.com/" target="_blank"> <img src="{{('frontend/assets/img/marka/engenius_logo.png')}}" width="100%" height="auto" /></a>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="service-wrap">
 
                             <div class="content-part">
-                                <a href="netfastsynology.php"><img src="{{('frontend/assets/img/marka/Synology_logo_Black.png')}}" width="100%" height="auto" /></a>
+                                <a href="https://www.synology.com/tr-tr" target="_blank"><img src="{{('frontend/assets/img/marka/Synology_logo_Black.png')}}" width="100%" height="auto" /></a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="service-wrap">
 
                             <div class="content-part">
-                                <a href="lr-link.php"><img src="{{('frontend/assets/img/marka/lr-link-logo.png')}}" width="100%" height="auto" /></a>
+                                <a href="https://www.lr-link.com/" target="_blank"><img src="{{('frontend/assets/img/marka/lr-link-logo.png')}}" width="100%" height="auto" /></a>
                             </div>
                         </div>
                     </div>
