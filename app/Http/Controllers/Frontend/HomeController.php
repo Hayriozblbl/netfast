@@ -30,7 +30,7 @@ class HomeController extends BaseFrontendController
     {
 
 
-        $sliders = slider::where('status', 1)->paginate();
+        $sliders = slider::where('status', 1)->orderBy("order")->paginate();
         $event = Event::where('start_date', '>=', date('Y-m-d'))->orderBy('start_date')->first();
         $events = Event::orderBy("id", "desc")->paginate(3);
         $about = about::find(1);

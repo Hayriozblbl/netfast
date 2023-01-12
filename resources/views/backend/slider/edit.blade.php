@@ -36,12 +36,12 @@
         <div class="card overflow-hidden">
             <div class="card-content">
                 <div class="card-body">
-                   
+
                     <!-- Tab panes -->
                     <div class="tab-content pt-1">
                         <div class="tab-pane active" id="home-slider" role="tabpanel"
                             aria-labelledby="home-tab-justified">
-                           
+
                             <h4 class="card-title">
                                 {{ trans('backend.title') }}</h4>
 
@@ -52,7 +52,7 @@
                             <textarea type="text" class="ckeditor" name="text_tr">{!! $slider->text_tr !!}</textarea>
                             <script type="text/javascript">
       CKEDITOR.replace( 'text_tr' );
-      CKEDITOR.add            
+      CKEDITOR.add
    </script>
                         </div>
                     </div>
@@ -71,7 +71,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Slider Sırası</h2>
+                        </div>
+                        <div class="body">
+                            <input value="@if (old('order')){{ old('order') }}@else{{ $slider->order }}@endif" type="number"
+                                   autocomplete="off" name="order" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
                     <div class="card">
                         <div class="header">
                             <h2>{{ trans('backend.status') }}</h2>
@@ -86,7 +97,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
+
+
         </div>
     </div>
 </div>

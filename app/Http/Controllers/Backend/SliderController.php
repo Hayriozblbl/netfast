@@ -75,6 +75,7 @@ class SliderController extends BaseBackendController
 
 
     $slider->url = $request->url;
+      $slider->order = $request->order;
 
     $slider->status = $request->status;
 
