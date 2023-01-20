@@ -42,7 +42,6 @@
                     </div>
                     <div class="col-lg-3 col-sm-6 mb-16">
                         <div class="service-wrap">
-
                             <div class="content-part">
                                 <a href="https://www.engeniustech.com/" target="_blank"> <img src="{{('frontend/assets/img/marka/engenius_logo.png')}}" width="100%" height="auto" /></a>
                             </div>

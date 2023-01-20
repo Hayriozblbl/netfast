@@ -31,13 +31,13 @@
 
                             </div>
                             <div class="content-part">
-                                <h3 class="title mb-10"><a href="{{route('frontend.announcements',$announcement->slug)}}">{{$announcement->title_tr}}</a></h3>
+                                <h3 class="title mb-10"><a href="{{route('frontend.announcement',$announcement->slug)}}">{{$announcement->title_tr}}</a></h3>
                                 <ul class="blog-meta mb-22">
                                     <li><i class="fa fa-calendar-check-o"></i>{{ date('d',strtotime($announcement->date)) }} {{ date('M',strtotime($announcement->date)) }}</li>
                                 </ul>
                                 <p class="desc mb-20">{!! Str::words($announcement->text_tr,30,'...')!!}</p>
                                 <div class="btn-part">
-                                    <a class="readon-arrow" href="{{route('frontend.announcement',$announcement->slug)}}">Devamını Gör</a>
+                                    <a class="readon-arrow" href="c">Devamını Gör</a>
 
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                             <ul>
                                 @foreach ($announcements as $announcement)
 
-                                    <li><a href="{{route('frontend.new',$announcement->slug)}}">{{$announcement->title_tr}}</a></li>
+                                    <li><a href="{{route('frontend.announcement',$announcement->slug)}}">{{$announcement->title_tr}}</a></li>
 
                                 @endforeach
                             </ul>
