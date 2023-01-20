@@ -51,27 +51,17 @@
                     <div id="sticky-sidebar" class="blog-sidebar">
 
 
-                        <div class="sidebar-popular-post sidebar-grid shadow mb-50">
+                        <div class="sidebar-categories sidebar-grid shadow">
                             <div class="sidebar-title">
-                                <h3 class="title mb-20">Diğer Duyurular</h3>
+                                <h3 class="title semi-bold mb-20">Diğer Duyurular</h3>
                             </div>
+                            <ul>
+                                @foreach ($announcements as $announcement)
 
-                            @foreach ($announcements as $announcement)
-                                <div class="single-post mb-20">
-                                    <div class="post-image">
-                                        <a href="{{route('frontend.announcements',$announcement->slug)}}"><img src="{{asset('uploads/announcements/')}}/{{$announcement->f_image}}" alt="{{$announcement->title}}"></a>
-                                    </div>
-                                    <div class="post-desc">
-                                        <div class="post-title">
-                                            <h5 class="margin-0"><a href="{{route('frontend.announcements',$announcement->slug)}}">{{$announcement->title}} </a></h5>
-                                        </div>
-                                        <ul>
-                                            <li><i class="fa fa-calendar"></i>{{ date('d',strtotime($announcement->date)) }} {{ date('M',strtotime($announcement->date)) }}</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            @endforeach
+                                    <li><a href="{{route('frontend.announcement',$announcement->slug)}}">{{$announcement->title_tr}}</a></li>
 
+                                @endforeach
+                            </ul>
                         </div>
 
 

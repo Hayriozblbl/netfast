@@ -63,7 +63,7 @@
 
                         <div class="sidebar-categories sidebar-grid shadow">
                             <div class="sidebar-title">
-                                <h3 class="title semi-bold mb-20">Diğer Bloglar</h3>
+                                <h3 class="title semi-bold mb-20">Diğer Duyurular</h3>
                             </div>
                             <ul>
                                 @foreach ($announcements as $announcement)
