@@ -64,7 +64,7 @@
                                                 <a href="#">Bilgi Merkezi</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="{{route('frontend.about')}}">Hakkımızda</a></li>
-                                                    <li><a href="{{asset('uploads/Catalog/Netfast-Bilisim-Urun-Katalogu.pdf')}}">Ürün Kataloğu</a></li>
+                                                    <li><a href="{{asset('uploads/Catalog/Netfast-Bilisim-Urun-Katalogu.pdf')}}" target="_blank">Ürün Kataloğu</a></li>
                                                     <li><a href="{{route('frontend.announcements')}}">Duyurular</a></li>
                                                     <li><a href="{{route('frontend.gallery')}}">Videolar</a></li>
                                                     <li><a href="{{route('frontend.events')}}">Etkinlikler</a></li>
