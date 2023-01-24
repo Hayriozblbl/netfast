@@ -74,7 +74,7 @@
                                                 </ul>
                                             </li>
 
-                                            <li><a href="{{route('frontend.teknik-dokumanlar')}}">Döküman / Katalog</a></li>
+                                            <li><a href="{{route('frontend.teknik-dokumanlar')}}">Teknik Dökümanlar</a></li>
                                             <li><a href="{{route('frontend.sss')}}">S.S.S</a></li>
                                             <li><a href="https://b2b.netfast.com.tr/">Bayi Giriş Portalı</a></li>
 
